@@ -1,0 +1,51 @@
+[ 2015-12-30T00:35:14+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000741s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005760s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005840s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000554s ]
+
+[ 2015-12-30T17:10:07+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000769s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000485s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000522s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000690s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000721s ]
+
+[ 2015-12-30T17:10:55+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000374s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000137s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000569s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+

@@ -1,0 +1,1795 @@
+[ 2016-01-03T14:14:02+08:00 ] 127.0.0.1 /admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+
+[ 2016-01-03T14:14:02+08:00 ] 127.0.0.1 /index.php/Admin/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000520s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000604s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012784s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012850s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000984s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001031s ]
+
+[ 2016-01-03T14:14:04+08:00 ] 127.0.0.1 /index.php/Admin/login/loginAdmin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0296s ]
+SQL: SELECT * FROM `es_admin` WHERE `adminName` = 'admin' AND `adminPassword` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0043s ]
+NOTIC: [8] Use of undefined constant adminid - assumed 'adminid' /Users/Haocheng/Documents/DB/Application/Admin/Controller/LoginController.class.php 第 21 行.
+
+[ 2016-01-03T14:14:04+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0018s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018407s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000665s ]
+
+[ 2016-01-03T20:18:03+08:00 ] 127.0.0.1 /admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006783s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006823s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000343s ]
+
+[ 2016-01-03T20:18:03+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+
+[ 2016-01-03T20:18:03+08:00 ] 127.0.0.1 /index.php/Admin/Login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003737s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003769s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000317s ]
+
+[ 2016-01-03T20:18:09+08:00 ] 127.0.0.1 /index.php/Admin/login/loginAdmin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `es_admin` WHERE `adminName` = 'admin' AND `adminPassword` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminid - assumed 'adminid' /Users/Haocheng/Documents/DB/Application/Admin/Controller/LoginController.class.php 第 21 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: UPDATE `es_admin` SET `adminCount`=adminCount+1 [ RunTime:0.0025s ]
+
+[ 2016-01-03T20:18:09+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019358s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019425s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000589s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2016-01-03T20:18:20+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8] Undefined index: adminCount /Users/Haocheng/Documents/DB/Application/Runtime/Cache/Admin/09264320c848e5c9fd029deb4e66f0ee.php 第 104 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013823s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013866s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2016-01-03T20:18:21+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000383s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010973s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011023s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2016-01-03T20:18:23+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+NOTIC: [8] Undefined index: adminCount /Users/Haocheng/Documents/DB/Application/Runtime/Cache/Admin/09264320c848e5c9fd029deb4e66f0ee.php 第 104 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011128s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011186s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000685s ]
+
+[ 2016-01-03T20:18:24+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010863s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000498s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000550s ]
+
+[ 2016-01-03T22:46:04+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+NOTIC: [8] Undefined index: adminCount /Users/Haocheng/Documents/DB/Application/Runtime/Cache/Admin/09264320c848e5c9fd029deb4e66f0ee.php 第 104 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012308s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012351s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000523s ]
+
+[ 2016-01-03T22:46:28+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011131s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000370s ]
+
+[ 2016-01-03T22:46:56+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010792s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000404s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2016-01-03T22:46:56+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011229s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011291s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000402s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000452s ]
+
+[ 2016-01-03T22:47:18+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010558s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010607s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000342s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000372s ]
+
+[ 2016-01-03T22:47:32+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000369s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0016s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013718s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+
+[ 2016-01-03T22:47:40+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010634s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010687s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000371s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2016-01-03T22:51:01+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0017s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+
+[ 2016-01-03T22:51:10+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+
+[ 2016-01-03T22:51:18+08:00 ] 127.0.0.1 /admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007248s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2016-01-03T22:51:18+08:00 ] 127.0.0.1 /admin/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000316s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2016-01-03T22:51:25+08:00 ] 127.0.0.1 /index.php/Admin/login/loginAdmin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `es_admin` WHERE `adminName` = 'admin' AND `adminPassword` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant adminid - assumed 'adminid' /Users/Haocheng/Documents/DB/Application/Admin/Controller/LoginController.class.php 第 21 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: UPDATE `es_admin` SET `adminCount`=adminCount+1 [ RunTime:0.0006s ]
+
+[ 2016-01-03T22:51:25+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011221s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011270s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000146s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000443s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000509s ]
+
+[ 2016-01-03T22:51:26+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0012s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+
+[ 2016-01-03T22:51:58+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0016s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011433s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011483s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000392s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2016-01-03T22:52:25+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010833s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010884s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2016-01-03T22:52:46+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005700s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005738s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000336s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+
+[ 2016-01-03T22:52:48+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0019s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010506s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000133s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2016-01-03T22:52:49+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007020s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007070s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000104s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000308s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000338s ]
+
+[ 2016-01-03T22:52:49+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010959s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011016s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000350s ]
+
+[ 2016-01-03T22:52:51+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006324s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006374s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000364s ]
+
+[ 2016-01-03T22:52:52+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012381s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000454s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2016-01-03T22:53:15+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0016s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011834s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011879s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000358s ]
+
+[ 2016-01-03T22:53:16+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010852s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010911s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000170s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000490s ]
+
+[ 2016-01-03T22:53:36+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011296s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011349s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000511s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000560s ]
+
+[ 2016-01-03T22:53:39+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011174s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011225s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000473s ]
+
+[ 2016-01-03T22:53:51+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0017s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011233s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000437s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2016-01-03T22:53:52+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011156s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011205s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000343s ]
+
+[ 2016-01-03T22:54:02+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011997s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000133s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000383s ]
+
+[ 2016-01-03T22:54:03+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011198s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011266s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000526s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000588s ]
+
+[ 2016-01-03T22:54:15+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011865s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011914s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2016-01-03T22:54:57+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010831s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010897s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000376s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000423s ]
+
+[ 2016-01-03T22:55:27+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011510s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011561s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000336s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+
+[ 2016-01-03T22:55:34+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010981s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2016-01-03T22:55:42+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011524s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000343s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000377s ]
+
+[ 2016-01-03T22:55:45+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0016s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013766s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013817s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000459s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000502s ]
+
+[ 2016-01-03T22:55:50+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012297s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000363s ]
+
+[ 2016-01-03T22:56:08+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2016-01-03T22:56:21+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011107s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011156s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000359s ]
+
+[ 2016-01-03T22:56:53+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0016s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010970s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011018s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000335s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000371s ]
+
+[ 2016-01-03T22:59:21+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000454s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0022s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013055s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000364s ]
+
+[ 2016-01-03T23:00:36+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011068s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011125s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000394s ]
+
+[ 2016-01-03T23:00:37+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000453s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011483s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011533s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000334s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000366s ]
+
+[ 2016-01-03T23:01:51+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010907s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010955s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000370s ]
+
+[ 2016-01-03T23:01:54+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000364s ]
+
+[ 2016-01-03T23:01:55+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011790s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000745s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000815s ]
+
+[ 2016-01-03T23:02:53+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010848s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010898s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000382s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000418s ]
+
+[ 2016-01-03T23:02:54+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0017s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012936s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012998s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000669s ]
+
+[ 2016-01-03T23:03:25+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012383s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2016-01-03T23:04:35+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000414s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0017s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011078s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000348s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000384s ]
+
+[ 2016-01-03T23:06:19+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011220s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000564s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000633s ]
+
+[ 2016-01-03T23:06:24+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005096s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005162s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000717s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
+
+[ 2016-01-03T23:06:25+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0025s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010574s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010622s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000428s ]
+
+[ 2016-01-03T23:06:27+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010930s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000530s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2016-01-03T23:06:29+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0020s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010946s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010994s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2016-01-03T23:06:31+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/adminInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+ERR: 模板不存在:./Public/Admin/Dashboard/adminInfo.html
+
+[ 2016-01-03T23:06:34+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011028s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000425s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000460s ]
+
+[ 2016-01-03T23:11:33+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0013s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010649s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000133s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000362s ]
+
+[ 2016-01-03T23:11:34+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011827s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011892s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000724s ]
+
+[ 2016-01-03T23:11:36+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010639s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010687s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000393s ]
+
+[ 2016-01-03T23:14:57+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011097s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011147s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000691s ]
+
+[ 2016-01-03T23:34:02+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0016s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant adminnickname - assumed 'adminnickname' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 9 行.
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 10 行.
+NOTIC: [8] Use of undefined constant admincount - assumed 'admincount' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020028s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020079s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000464s ]
+
+[ 2016-01-03T23:34:03+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0015s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011971s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012036s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000185s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000236s ]
+
+[ 2016-01-03T23:34:06+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/5
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+ERR: 非法操作:5
+
+[ 2016-01-03T23:34:22+08:00 ] 127.0.0.1 /index.php/Admin/dashboard/itemCatalog.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `es_admin` [ RunTime:0.0014s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/Haocheng/Documents/DB/ThinkPHP/Library/Think/Db/Driver.class.php 第 504 行.
+SQL: SELECT * FROM `es_admin` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant superior - assumed 'superior' /Users/Haocheng/Documents/DB/Application/Admin/Controller/DashboardController.class.php 第 51 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010662s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+

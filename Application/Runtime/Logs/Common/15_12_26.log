@@ -1,0 +1,24 @@
+[ 2015-12-26T00:11:00+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+ERR: 无法加载模块:Favicon
+
+[ 2015-12-26T15:52:19+08:00 ] 127.0.0.1 /index.php/Public/Footer/jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+ERR: 无法加载模块:Public
+
+[ 2015-12-26T15:52:21+08:00 ] 127.0.0.1 /index.php/Public/Footer/jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+ERR: 无法加载模块:Public
+
+[ 2015-12-26T15:52:27+08:00 ] 127.0.0.1 /index.php/Public/Footer/jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+ERR: 无法加载模块:Public
+
