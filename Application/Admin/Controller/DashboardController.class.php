@@ -65,9 +65,10 @@ class DashboardController extends Controller {
 					$shopId = $shop[$i][shopid];
 					$shopData[$i]['shopId'] = $shopId;
 					$shopData[$i]['shopName'] = $shop[$i][shopname];
-					
-					$shopItem = M('Products') -> where('shopId=1') -> getField('productid',true);
-					echo json_encode($shopItem);
+
+					$shopItem = 0;
+					$shopItem = M('Products') -> where('shopId='+$shopId) -> select();
+					// echo json_encode($shopItem[$i]);
 					$shopData[$i]['shopItem'] = count($shopItem);
 					// $shopData[$key]['shopList'] = json_encode($shopItem);
 
