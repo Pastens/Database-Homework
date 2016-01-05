@@ -115,15 +115,15 @@
                     <div class="ui horizontal segments">
                         <div class="ui mini statistic segment">
                             <div class="value">
-                                22
+                                <?php echo ($data["itemType"]); ?>
                             </div>
                             <div class="label">
-                                商品种类
+                                在售商品种类
                             </div>
                         </div>
                         <div class="ui mini statistic segment">
                             <div class="value">
-                                22
+                                <?php echo ($data["orderNumber"]); ?>
                             </div>
                             <div class="label">
                                 订单数量
@@ -131,7 +131,7 @@
                         </div>
                         <div class="ui mini statistic segment">
                             <div class="value">
-                                22
+                                <?php echo ($data["orderQuantity"]); ?>
                             </div>
                             <div class="label">
                                 销售量
@@ -139,7 +139,7 @@
                         </div>
                         <div class="ui mini statistic segment">
                             <div class="value">
-                                22
+                                <?php echo ($data["outStock"]); ?>
                             </div>
                             <div class="label">
                                 缺货商品种类

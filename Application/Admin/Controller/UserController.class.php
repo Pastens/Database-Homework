@@ -2,15 +2,6 @@
 namespace Admin\Controller;
 use Think\Controller;
 class UserController extends Controller {
-	public function index(){
-		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
-        if($condition){
-        	$this->redirect('/Admin/Dashboard');
-        }else{
-        	$this->redirect('/Admin/Login');
-        }
-	}
-
 	public function addAdmin(){
 		if(!IS_POST){
 			$this->error('非法操作');

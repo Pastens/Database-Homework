@@ -140,15 +140,15 @@
                     <div class="ui horizontal segments">
                         <div class="ui mini statistic segment">
                             <div class="value">
-                                22
+                                <?php echo ($data["itemType"]); ?>
                             </div>
                             <div class="label">
-                                商品种类
+                                在售商品种类
                             </div>
                         </div>
                         <div class="ui mini statistic segment">
                             <div class="value">
-                                22
+                                <?php echo ($data["userNumber"]); ?>
                             </div>
                             <div class="label">
                                 用户数量
@@ -156,7 +156,7 @@
                         </div>
                         <div class="ui mini statistic segment">
                             <div class="value">
-                                22
+                                <?php echo ($data["adminNumber"]); ?>
                             </div>
                             <div class="label">
                                 管理员数量
@@ -168,7 +168,7 @@
                 <div class="ui segment">
                     <h4>产品团队</h4>
                     <div class="ui stacked segments">
-						<p class="ui segment">本产品后台基于PHP开源框架Thinkphp搭建，页面采用Semantic UI渲染布局。产品遵循Apache 2开源协议</p>
+						<p class="ui segment">本产品后台基于PHP开源框架Thinkphp搭建，页面采用Semantic UI渲染布局。产品遵循MIT开源协议</p>
 						<p class="ui segment">开发团队：刘昊程、徐添翼、刘丹杨、沈天辰</p>
                     </div>
                 </div>
