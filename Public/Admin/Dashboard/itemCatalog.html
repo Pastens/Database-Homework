@@ -159,12 +159,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            <volist name="shopItem" id="shopItem">
+                                <tr>
+                                    <td>{$shopItem.shopName}</td>
+                                    <td>{$shopItem.shopItem}</td>
+                                    
+                                </tr>
+                            </volist>
                             <tr>
                                 <td></td>
                                 <td></td>

@@ -159,12 +159,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            <?php if(is_array($shopItem)): $i = 0; $__LIST__ = $shopItem;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shopItem): $mod = ($i % 2 );++$i;?><tr>
+                                    <td><?php echo ($shopItem["shopName"]); ?></td>
+                                    <td><?php echo ($shopItem["shopItem"]); ?></td>
+                                    
+                                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                             <tr>
                                 <td></td>
                                 <td></td>
