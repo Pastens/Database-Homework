@@ -59,7 +59,6 @@ class DashboardController extends Controller {
 			$data['orderQuantity'] = 0;
 			foreach ($orders as $value) {
 				$orderDetail = M('Orderitems') -> where('orderId='+$value)->getField('quantity',true);
-				echo json_encode($orderDetail);
 				foreach ($orderDetail as $num){
 					$data['orderQuantity'] += $num;
 				}
