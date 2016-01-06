@@ -165,12 +165,6 @@
                                     <td><?php echo ($shopItem["shopSale"]); ?></td>
                                     <td><?php echo ($shopItem["shopProfit"]); ?></td>
                                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
                         </tbody>
                         <tfoot>
                             <tr>
