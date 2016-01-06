@@ -164,7 +164,6 @@
                                     <td><?php echo ($shopItem["shopItem"]); ?></td>
                                     <td><?php echo ($shopItem["shopSale"]); ?></td>
                                     <td><?php echo ($shopItem["shopProfit"]); ?></td>
-                                    
                                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                             <tr>
                                 <td></td>
@@ -177,8 +176,8 @@
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th>共22家</th>
-                                <th>（2家已被封禁）</th>
+                                <th></th>
+                                <th>共<?php echo ($data["shopNum"]); ?>家（<?php echo ($data["shopDisabled"]); ?>家已被封禁）</th>
                             </tr>
                         </tfoot>
                     </table>

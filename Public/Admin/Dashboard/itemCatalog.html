@@ -165,7 +165,6 @@
                                     <td>{$shopItem.shopItem}</td>
                                     <td>{$shopItem.shopSale}</td>
                                     <td>{$shopItem.shopProfit}</td>
-                                    
                                 </tr>
                             </volist>
                             <tr>
@@ -179,8 +178,8 @@
                             <tr>
                                 <th></th>
                                 <th></th>
-                                <th>共22家</th>
-                                <th>（2家已被封禁）</th>
+                                <th></th>
+                                <th>共{$data.shopNum}家（{$data.shopDisabled}家已被封禁）</th>
                             </tr>
                         </tfoot>
                     </table>

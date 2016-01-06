@@ -95,7 +95,9 @@ class DashboardController extends Controller {
 						}
 					}
 				}
-				
+
+				$data['shopNum'] = count($shop);
+				$data['shopDisabled'] = count(M('Shop') -> where('enable=0')->select());
 				$data['adminName'] = $rawData[adminnickname];
 				$this->assign('shopItem',$shopData);
 				$this->assign('data',$data);
