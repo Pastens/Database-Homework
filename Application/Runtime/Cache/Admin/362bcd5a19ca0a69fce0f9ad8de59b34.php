@@ -199,7 +199,7 @@
                         </thead>
                         <tbody>
                             <?php if(is_array($shopItem)): $i = 0; $__LIST__ = $shopItem;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shopItem): $mod = ($i % 2 );++$i;?><tr>
-                                    <td class="collapsing">
+                                    <td class="collapsing selectable" data-sort-value="<?php echo ($shopItem["enable"]); ?>">
                                         <div class="ui fitted slider checkbox">
                                             <!-- <?php echo ($shopItem["enable?checked:''"]); ?> -->
                                             <?php if($shopItem["enable"] == '1'): ?><input type="checkbox" checked disabled>
@@ -232,12 +232,12 @@
             </div>
         </div>
     </div>
-    <div class="ui small centered modal">
+    <div class="ui small modal">
         <i class="close icon"></i>
         <div class="header">
             修改商品信息
         </div>
-        <div class="content">
+        <div class="content center aligned ">
             <div class="ui form">
                 <div class="field">
                     <label>商品名</label>
@@ -254,6 +254,12 @@
                 <div class="field">
                     <label>库存量</label>
                     <input rows="1" name="itemStock" id="itemStock">
+                </div>
+                <div class="field">
+                    <div class="ui toggle checkbox">
+                        <label>销售状态</label>
+                        <input type="checkbox" name="itemStatus" id="itemStatus">
+                    </div>
                 </div>
             </div>
         </div>
@@ -279,12 +285,20 @@
 
         $('.selectable a').on('click', function(event) {
             $('.error').removeClass('error');
+            $('.ui.toggle.checked').removeClass('checked');
+
             var Nodes = this.parentNode.parentNode;
             var Childs = Nodes.querySelectorAll('.selectable');
-            $('#itemName').val(Childs[0].getAttribute('data-sort-value'));
-            $('#itemIntro').val(Childs[1].getAttribute('data-sort-value'));
-            $('#itemPrice').val(Childs[2].getAttribute('data-sort-value'));
-            $('#itemStock').val(Childs[3].getAttribute('data-sort-value'));
+            $('#itemName').val(Childs[1].getAttribute('data-sort-value'));
+            $('#itemIntro').val(Childs[2].getAttribute('data-sort-value'));
+            $('#itemPrice').val(Childs[3].getAttribute('data-sort-value'));
+            $('#itemStock').val(Childs[4].getAttribute('data-sort-value'));
+            console.log(Childs[0].getAttribute('data-sort-value'));
+            if(Childs[0].getAttribute('data-sort-value')==1){
+                $(".ui.toggle.checkbox").checkbox('set checked');
+            }else{
+                $(".ui.toggle.checkbox").checkbox('set unchecked');
+            }
             $('.ui.modal').modal('show');
         });
 
