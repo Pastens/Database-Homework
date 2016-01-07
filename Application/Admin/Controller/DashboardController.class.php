@@ -108,6 +108,10 @@ class DashboardController extends Controller {
         }
 	}
 
+	public function shopList(){
+		$this->display();
+	}
+
 	public function itemList(){
 		$this->display();
 	}

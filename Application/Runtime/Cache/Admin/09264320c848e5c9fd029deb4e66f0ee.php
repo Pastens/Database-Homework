@@ -65,7 +65,8 @@
                 商店管理 <i class="dropdown icon"></i>
                 <div class="menu">
                     <a class="item active" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
-                    <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                    <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                    <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
                     <div class="divider"></div>
                     <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
                 </div>
@@ -168,10 +169,16 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
                                 <th>共<?php echo ($data["shopNum"]); ?>家（<?php echo ($data["shopDisabled"]); ?>家已被封禁）</th>
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    <div class="ui tiny buttons">
+                                        <a class="ui button" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                                        <div class="or" data-text="或"></div>
+                                        <a class="ui positive button" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
+                                    </div>
+                                </th>
                             </tr>
                         </tfoot>
                     </table>

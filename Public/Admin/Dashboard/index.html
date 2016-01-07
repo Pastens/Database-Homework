@@ -103,7 +103,7 @@
             <div class="ui piled segments">
                 <div class="ui segment">
                     <h1 class="ui header">欢迎你，Eshop管理员 {$data.adminName}</h1>
-                    <p>这是您第 {$data.adminCount} 次登录本管理系统，您在本系统所拥有的权限等级为 {$data.adminSuperior}</p>
+                    <p>这是您第 {$data.adminCount} 次登录本管理系统，您在本系统所拥有的权限等级为 {$data.adminSuperior}，您目前的IP是 {$ip=get_client_ip()}</p>
                     <h4>您所拥有的权限内容为：</h4>
                     <div class="ui horizontal segments">
                         <div class="ui center aligned segment" data-title="用户管理权限" data-content="拥有修改除了您和系统管理员之外所有用户的权限">
