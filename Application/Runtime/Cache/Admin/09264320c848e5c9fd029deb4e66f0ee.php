@@ -6,6 +6,7 @@
     <title>管理面板 —— Eshop</title>
     <link rel="stylesheet" type="text/css" href="/Public/Static/semantic/semantic/dist/semantic.min.css">
     <script type="text/javascript" src="/Public/Static/jquery.min.js"></script>
+    <script type="text/javascript" src="/Public/Static/jquery.tablesort.js"></script>
     <script type="text/javascript" src="/Public/Static/semantic/semantic/dist/semantic.min.js"></script>
     <style>
     body {
@@ -150,7 +151,7 @@
                 </div>
                 <div class="ui segment">
                     <h4>站点商店总览</h4>
-                    <table class="ui center aligned fixed table">
+                    <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
                                 <th>商店名</th>
@@ -169,7 +170,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>共<?php echo ($data["shopNum"]); ?>家（<?php echo ($data["shopDisabled"]); ?>家已被封禁）</th>
+                                <th>共<?php echo ($data["shopNum"]); ?>家 <?php echo ($data["shopDisabled"]); ?>家已被封禁</th>
                                 <th></th>
                                 <th></th>
                                 <th>
@@ -194,6 +195,10 @@
             </div>
         </div>
     </div>
+    <script>
+        //initialize
+        $('table').tablesort();
+    </script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@ class DashboardController extends Controller {
 	public function index(){
 		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
 		if($condition){
-			$rawData = M('Admin') -> where("id="+cookie('cid'))->find();
+			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
 			$data['adminNumber'] = count(M('Admin') -> where('enable=1')->select());
 			$data['userNumber'] = count(M('Users') -> where('enable=1')->select());
 			$data['itemType'] = count(M('Products') -> where('enable=1')->select());
@@ -52,7 +52,7 @@ class DashboardController extends Controller {
 	public function itemCatalog(){
 		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
 		if($condition){
-			$rawData = M('Admin') -> where('id='+cookie('cid'))->find();
+			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
 			$data['adminSuperior'] = $rawData[superior];
 			//Check superior
 			if($data['adminSuperior'] == '5'){
