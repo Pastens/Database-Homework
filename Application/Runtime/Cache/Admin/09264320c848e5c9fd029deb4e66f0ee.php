@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>管理面板 —— Eshop</title>
+    <title>商品概况 —— Eshop</title>
     <link rel="stylesheet" type="text/css" href="/Public/Static/semantic/semantic/dist/semantic.min.css">
     <script type="text/javascript" src="/Public/Static/jquery.min.js"></script>
     <script type="text/javascript" src="/Public/Static/jquery.tablesort.js"></script>
@@ -62,42 +62,109 @@
                 <img class="logo" src="/Public/Static/assets/images/logo.png">管理面板
             </a>
             <a href="<?php echo U('Admin/dashboard/index');?>" class="item">面板首页</a>
-            <div class="ui simple dropdown item">
-                商店管理 <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item active" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
-                    <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
-                    <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
-                    <div class="divider"></div>
-                    <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
-                </div>
-            </div>
-            <div class="ui simple dropdown item">
-                用户管理 <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item" href="<?php echo U('Admin/dashboard/userManage');?>">会员管理</a>
-                    <a class="item" href="<?php echo U('Admin/dashboard/adminManage');?>">管理员管理</a>
-                </div>
-            </div>
-            <div class="ui simple dropdown item">
-                系统管理 <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item" href="<?php echo U('Admin/dashboard/systemLog');?>">系统日志</a>
-                    <div class="divider"></div>
-                    <a class="item" href="<?php echo U('Admin/dashboard/apiList');?>">API列表</a>
-                    <a class="item" href="<?php echo U('Admin/dashboard/devDocument');?>">开发文档</a>
-                </div>
-            </div>
-            <div class="right menu">
-                <div class="ui simple dropdown item">
-                    欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
-                        <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
-                        <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+            <?php switch($data["adminSuperior"]): case "0": case "1": ?><div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
+                            <div class="divider"></div>
+                            <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <div class="ui simple dropdown item">用户管理 <i class="dropdown icon"></i>
+                        <div class="menu"><a class="item" href="<?php echo U('Admin/dashboard/userManage');?>">会员管理</a><a class="item" href="<?php echo U('Admin/dashboard/adminManage');?>">管理员管理</a></div>
+                    </div>
+                    <div class="ui simple dropdown item">
+                        系统管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="<?php echo U('Admin/dashboard/systemLog');?>">系统日志</a>
+                            <div class="divider"></div>
+                            <a class="item" href="<?php echo U('Admin/dashboard/apiList');?>">API列表</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/devDocument');?>">开发文档</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break;?>
+                <?php case "2": ?><div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break;?>
+                <?php case "3": ?><div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
+                            <div class="divider"></div>
+                            <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break;?>
+                <?php case "4": ?><div class="ui simple dropdown item">用户管理 <i class="dropdown icon"></i>
+                        <div class="menu"><a class="item" href="<?php echo U('Admin/dashboard/userManage');?>">会员管理</a><a class="item" href="<?php echo U('Admin/dashboard/adminManage');?>">管理员管理</a></div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break;?>
+                <?php case "5": ?><div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
+                            <div class="divider"></div>
+                            <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改商店资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break; endswitch;?>
         </div>
     </div>
     <div class="ui grid container">
@@ -162,10 +229,10 @@
                         </thead>
                         <tbody>
                             <?php if(is_array($shopItem)): $i = 0; $__LIST__ = $shopItem;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shopItem): $mod = ($i % 2 );++$i;?><tr>
-                                    <td><?php echo ($shopItem["shopName"]); ?></td>
-                                    <td><?php echo ($shopItem["shopItem"]); ?></td>
-                                    <td><?php echo ($shopItem["shopSale"]); ?></td>
-                                    <td><?php echo ($shopItem["shopProfit"]); ?></td>
+                                    <td data-sort-value="<?php echo ($shopItem["shopName"]); ?>"><?php echo ($shopItem["shopName"]); ?></td>
+                                    <td data-sort-value="<?php echo ($shopItem["shopItem"]); ?>"><?php echo ($shopItem["shopItem"]); ?></td>
+                                    <td data-sort-value="<?php echo ($shopItem["shopSale"]); ?>"><?php echo ($shopItem["shopSale"]); ?></td>
+                                    <td data-sort-value="<?php echo ($shopItem["shopProfit"]); ?>"><?php echo ($shopItem["shopProfit"]); ?></td>
                                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                         </tbody>
                         <tfoot>

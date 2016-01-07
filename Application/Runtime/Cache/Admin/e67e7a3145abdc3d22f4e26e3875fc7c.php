@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>管理面板 —— Eshop</title>
+    <title>管理面板首页 —— Eshop</title>
     <link rel="stylesheet" type="text/css" href="/Public/Static/semantic/semantic/dist/semantic.min.css">
     <script type="text/javascript" src="/Public/Static/jquery.min.js"></script>
     <script type="text/javascript" src="/Public/Static/semantic/semantic/dist/semantic.min.js"></script>
@@ -66,7 +66,7 @@
                         <div class="menu">
                             <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
                             <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
-                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
                             <div class="divider"></div>
                             <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
                         </div>
@@ -98,7 +98,7 @@
                         <div class="menu">
                             <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
                             <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
-                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
                         </div>
                     </div>
                     <div class="right menu">
@@ -116,7 +116,7 @@
                         <div class="menu">
                             <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
                             <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
-                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
                             <div class="divider"></div>
                             <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
                         </div>
@@ -149,7 +149,7 @@
                         <div class="menu">
                             <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
                             <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
-                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品管理</a>
                             <div class="divider"></div>
                             <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
                         </div>

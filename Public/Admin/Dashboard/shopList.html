@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>管理面板 —— Eshop</title>
+    <title>店铺管理 —— Eshop</title>
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/semantic/semantic/dist/semantic.min.css">
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.tablesort.js"></script>
@@ -62,42 +62,121 @@
                 <img class="logo" src="__PUBLIC__/Static/assets/images/logo.png">管理面板
             </a>
             <a href="{:U('Admin/dashboard/index')}" class="item">面板首页</a>
-            <div class="ui simple dropdown item">
-                商店管理 <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item active" href="{:U('Admin/dashboard/itemCatalog')}">商品概况</a>
-                    <a class="item" href="{:U('Admin/dashboard/shopList')}">店铺管理</a>
-                    <a class="item" href="{:U('Admin/dashboard/itemList')}">商品管理</a>
-                    <div class="divider"></div>
-                    <a class="item" href="{:U('Admin/dashboard/orderList')}">订单管理</a>
-                </div>
-            </div>
-            <div class="ui simple dropdown item">
-                用户管理 <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item" href="{:U('Admin/dashboard/userManage')}">会员管理</a>
-                    <a class="item" href="{:U('Admin/dashboard/adminManage')}">管理员管理</a>
-                </div>
-            </div>
-            <div class="ui simple dropdown item">
-                系统管理 <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item" href="{:U('Admin/dashboard/systemLog')}">系统日志</a>
-                    <div class="divider"></div>
-                    <a class="item" href="{:U('Admin/dashboard/apiList')}">API列表</a>
-                    <a class="item" href="{:U('Admin/dashboard/devDocument')}">开发文档</a>
-                </div>
-            </div>
-            <div class="right menu">
-                <div class="ui simple dropdown item">
-                    欢迎你，{$data.adminName} <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <a class="item" href="{:U('Admin/dashboard/adminInfo')}">更改资料</a>
-                        <a class="item" href="{:U('Admin/dashboard/resetPassword')}">更改密码</a>
-                        <a class="item" href="{:U('Admin/login/logout')}">登出</a>
+            <switch name="data.adminSuperior">
+                <case value="0|1">
+                    <div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="{:U('Admin/dashboard/itemCatalog')}">商品概况</a>
+                            <a class="item" href="{:U('Admin/dashboard/shopList')}">店铺管理</a>
+                            <a class="item" href="{:U('Admin/dashboard/itemList')}">商品管理</a>
+                            <div class="divider"></div>
+                            <a class="item" href="{:U('Admin/dashboard/orderList')}">订单管理</a>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <div class="ui simple dropdown item">用户管理 <i class="dropdown icon"></i>
+                        <div class="menu"><a class="item" href="{:U('Admin/dashboard/userManage')}">会员管理</a><a class="item" href="{:U('Admin/dashboard/adminManage')}">管理员管理</a></div>
+                    </div>
+                    <div class="ui simple dropdown item">
+                        系统管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="{:U('Admin/dashboard/systemLog')}">系统日志</a>
+                            <div class="divider"></div>
+                            <a class="item" href="{:U('Admin/dashboard/apiList')}">API列表</a>
+                            <a class="item" href="{:U('Admin/dashboard/devDocument')}">开发文档</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，{$data.adminName} <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="{:U('Admin/dashboard/adminInfo')}">更改资料</a>
+                                <a class="item" href="{:U('Admin/dashboard/resetPassword')}">更改密码</a>
+                                <a class="item" href="{:U('Admin/login/logout')}">登出</a>
+                            </div>
+                        </div>
+                    </div>
+                </case>
+                <case value="2">
+                    <div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="{:U('Admin/dashboard/itemCatalog')}">商品概况</a>
+                            <a class="item" href="{:U('Admin/dashboard/shopList')}">店铺管理</a>
+                            <a class="item" href="{:U('Admin/dashboard/itemList')}">商品管理</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，{$data.adminName} <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="{:U('Admin/dashboard/adminInfo')}">更改资料</a>
+                                <a class="item" href="{:U('Admin/dashboard/resetPassword')}">更改密码</a>
+                                <a class="item" href="{:U('Admin/login/logout')}">登出</a>
+                            </div>
+                        </div>
+                    </div>
+                </case>
+                <case value="3">
+                    <div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="{:U('Admin/dashboard/itemCatalog')}">商品概况</a>
+                            <a class="item" href="{:U('Admin/dashboard/shopList')}">店铺管理</a>
+                            <a class="item" href="{:U('Admin/dashboard/itemList')}">商品管理</a>
+                            <div class="divider"></div>
+                            <a class="item" href="{:U('Admin/dashboard/orderList')}">订单管理</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，{$data.adminName} <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="{:U('Admin/dashboard/adminInfo')}">更改资料</a>
+                                <a class="item" href="{:U('Admin/dashboard/resetPassword')}">更改密码</a>
+                                <a class="item" href="{:U('Admin/login/logout')}">登出</a>
+                            </div>
+                        </div>
+                    </div>
+                </case>
+                <case value="4">
+                    <div class="ui simple dropdown item">用户管理 <i class="dropdown icon"></i>
+                        <div class="menu"><a class="item" href="{:U('Admin/dashboard/userManage')}">会员管理</a><a class="item" href="{:U('Admin/dashboard/adminManage')}">管理员管理</a></div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，{$data.adminName} <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="{:U('Admin/dashboard/adminInfo')}">更改资料</a>
+                                <a class="item" href="{:U('Admin/dashboard/resetPassword')}">更改密码</a>
+                                <a class="item" href="{:U('Admin/login/logout')}">登出</a>
+                            </div>
+                        </div>
+                    </div>
+                </case>
+                <case value="5">
+                    <div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="{:U('Admin/dashboard/itemCatalog')}">商品概况</a>
+                            <a class="item" href="{:U('Admin/dashboard/shopList')}">店铺管理</a>
+                            <a class="item" href="{:U('Admin/dashboard/itemList')}">商品管理</a>
+                            <div class="divider"></div>
+                            <a class="item" href="{:U('Admin/dashboard/orderList')}">订单管理</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，{$data.adminName} <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="{:U('Admin/dashboard/adminInfo')}">更改商店资料</a>
+                                <a class="item" href="{:U('Admin/dashboard/resetPassword')}">更改密码</a>
+                                <a class="item" href="{:U('Admin/login/logout')}">登出</a>
+                            </div>
+                        </div>
+                    </div>
+                </case>
+            </switch>
         </div>
     </div>
     <div class="ui grid container">
@@ -109,7 +188,7 @@
                         <i class="right chevron icon divider"></i>
                         <div class="section">商店管理</div>
                         <i class="right arrow icon divider"></i>
-                        <div class="active section">商品概况</div>
+                        <div class="active section">店铺管理</div>
                     </div>
                 </div>
                 <div class="ui segment">
