@@ -11,36 +11,7 @@ class DashboardController extends Controller {
 			$data['itemType'] = count(M('Products') -> where('enable=1')->select());
 
 			$data['adminName'] = $rawData[adminnickname];
-
-			switch ($rawData[superior]) {
-				case '0':
-					$data['adminSuperior'] = '系统开发人员';
-					break;
-
-				case '1':
-					$data['adminSuperior'] = '系统管理员';
-					break;
-				
-				case '2':
-					$data['adminSuperior'] = '内容管理员';
-					break;
-
-				case '3':
-					$data['adminSuperior'] = '商店管理员';
-					break;
-
-				case '4':
-					$data['adminSuperior'] = '订单管理员';
-					break;
-
-				case '5':
-					$data['adminSuperior'] = '用户管理员';
-					break;
-
-				case '6':
-					$data['adminSuperior'] = '加盟客户';
-					break;
-			}
+			$data['adminSuperior'] = $rawData[superior];
 			$data['adminCount'] = $rawData[admincount]+1;
 			$this->assign('data',$data);
 			$this->display();
@@ -55,7 +26,7 @@ class DashboardController extends Controller {
 			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
 			$data['adminSuperior'] = $rawData[superior];
 			//Check superior
-			if($data['adminSuperior'] == '5'){
+			if($data['adminSuperior'] == '4'){
 				$this->error('您没有访问该部分的权限');
 			}else{
 				// 获取在售商品种类

@@ -61,48 +61,109 @@
                 <img class="logo" src="/Public/Static/assets/images/logo.png">管理面板
             </a>
             <a href="<?php echo U('Admin/dashboard/index');?>" class="item active">面板首页</a>
-            <div class="ui simple dropdown item">
-                商店管理 <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
-                    <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
-                    <div class="divider"></div>
-                    <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
-                </div>
-            </div>
-            <?php if($data["adminSuperior"] == '加盟客户'): ?><div class="right menu">
-                    <div class="ui simple dropdown item">
-                        欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+            <?php switch($data["adminSuperior"]): case "0": case "1": ?><div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
                         <div class="menu">
-                            <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改商店资料</a>
-                            <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
-                            <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                            <div class="divider"></div>
+                            <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
                         </div>
                     </div>
-                </div>
-            <?php else: ?>
-                <div class="ui simple dropdown item">用户管理 <i class="dropdown icon"></i>
-                    <div class="menu"><a class="item" href="<?php echo U('Admin/dashboard/userManage');?>">会员管理</a><a class="item" href="<?php echo U('Admin/dashboard/adminManage');?>">管理员管理</a></div>
-                </div>
-                <div class="ui simple dropdown item">
-                    系统管理 <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <a class="item" href="<?php echo U('Admin/dashboard/systemLog');?>">系统日志</a>
-                        <div class="divider"></div>
-                        <a class="item" href="<?php echo U('Admin/dashboard/apiList');?>">API列表</a>
-                        <a class="item" href="<?php echo U('Admin/dashboard/devDocument');?>">开发文档</a>
+                    <div class="ui simple dropdown item">用户管理 <i class="dropdown icon"></i>
+                        <div class="menu"><a class="item" href="<?php echo U('Admin/dashboard/userManage');?>">会员管理</a><a class="item" href="<?php echo U('Admin/dashboard/adminManage');?>">管理员管理</a></div>
                     </div>
-                </div>
-                <div class="right menu">
                     <div class="ui simple dropdown item">
-                        欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                        系统管理 <i class="dropdown icon"></i>
                         <div class="menu">
-                            <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
-                            <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
-                            <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/systemLog');?>">系统日志</a>
+                            <div class="divider"></div>
+                            <a class="item" href="<?php echo U('Admin/dashboard/apiList');?>">API列表</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/devDocument');?>">开发文档</a>
                         </div>
                     </div>
-                </div><?php endif; ?>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break;?>
+                <?php case "2": ?><div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break;?>
+                <?php case "3": ?><div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                            <div class="divider"></div>
+                            <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break;?>
+                <?php case "4": ?><div class="ui simple dropdown item">用户管理 <i class="dropdown icon"></i>
+                        <div class="menu"><a class="item" href="<?php echo U('Admin/dashboard/userManage');?>">会员管理</a><a class="item" href="<?php echo U('Admin/dashboard/adminManage');?>">管理员管理</a></div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break;?>
+                <?php case "5": ?><div class="ui simple dropdown item">
+                        商店管理 <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemCatalog');?>">商品概况</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/shopList');?>">店铺管理</a>
+                            <a class="item" href="<?php echo U('Admin/dashboard/itemList');?>">商品列表</a>
+                            <div class="divider"></div>
+                            <a class="item" href="<?php echo U('Admin/dashboard/orderList');?>">订单管理</a>
+                        </div>
+                    </div>
+                    <div class="right menu">
+                        <div class="ui simple dropdown item">
+                            欢迎你，<?php echo ($data["adminName"]); ?> <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="<?php echo U('Admin/dashboard/adminInfo');?>">更改商店资料</a>
+                                <a class="item" href="<?php echo U('Admin/dashboard/resetPassword');?>">更改密码</a>
+                                <a class="item" href="<?php echo U('Admin/login/logout');?>">登出</a>
+                            </div>
+                        </div>
+                    </div><?php break; endswitch;?>
         </div>
     </div>
     <div class="ui grid container">
@@ -110,36 +171,150 @@
             <div class="ui piled segments">
                 <div class="ui segment">
                     <h1 class="ui header">欢迎你，<?php echo ($data["adminName"]); ?></h1>
-                    <p>这是您第 <?php echo ($data["adminCount"]); ?> 次登录本管理系统，您在本系统所拥有的权限等级为 <?php echo ($data["adminSuperior"]); ?>，您目前的IP是 <?php echo ($ip=get_client_ip()); ?></p>
+                    <p>这是您第 <?php echo ($data["adminCount"]); ?> 次登录本管理系统，您在本系统所拥有的权限等级为
+                        <?php switch($data["adminSuperior"]): case "0": ?>系统开发人员<?php break;?>
+                            <?php case "1": ?>系统管理员<?php break;?>
+                            <?php case "2": ?>商店管理员<?php break;?>
+                            <?php case "3": ?>订单管理员<?php break;?>
+                            <?php case "4": ?>用户管理员<?php break;?>
+                            <?php case "5": ?>加盟客户<?php break; endswitch;?>，您目前的IP是 <?php echo ($ip=get_client_ip()); ?></p>
                     <h4>您所拥有的权限内容为：</h4>
                     <div class="ui horizontal segments">
-                        <div class="ui center aligned segment" data-title="用户管理权限" data-content="拥有修改除了您和系统管理员之外所有用户的权限">
-                            <h5 class="ui blue icon header">
-                                <i class="users icon"></i>
-                                <div class="content">
-                                    用户管理
+                        <?php switch($data["adminSuperior"]): case "0": case "1": ?><div class="ui center aligned segment" data-content="拥有修改除了您和系统管理员之外所有用户的权限">
+                                    <h5 class="ui blue icon header">
+                                    <i class="users icon"></i>
+                                    <div class="content">
+                                        用户管理
+                                    </div>
+                                    <div class="sub header">管理会员账号与限定的管理员账号</div>
+                                </h5>
                                 </div>
-                                <div class="sub header">管理会员账号与限定的管理员账号</div>
-                            </h5>
-                        </div>
-                        <div class="ui center aligned segment" data-title="商品管理权限" data-content="拥有修改任何商品信息的权限">
-                            <h5 class="ui red icon header">
-                                <i class="archive icon"></i>
-                                <div class="content">
-                                    商品管理
+                                <div class="ui center aligned segment" data-content="拥有修改任何商品信息的权限">
+                                    <h5 class="ui red icon header">
+                                    <i class="archive icon"></i>
+                                    <div class="content">
+                                        商品管理
+                                    </div>
+                                    <div class="sub header">管理商店的商品</div>
+                                </h5>
                                 </div>
-                                <div class="sub header">管理商店的商品</div>
-                            </h5>
-                        </div>
-                        <div class="ui center aligned segment" data-title="订单管理权限" data-content="拥有修改任何订单的权限">
-                            <h5 class="ui brown icon header">
-                                <i class="shipping icon"></i>
-                                <div class="content">
-                                    订单管理
+                                <div class="ui center aligned segment" data-content="拥有修改任何订单的权限">
+                                    <h5 class="ui brown icon header">
+                                    <i class="shipping icon"></i>
+                                    <div class="content">
+                                        订单管理
+                                    </div>
+                                    <div class="sub header">管理订单的状态</div>
+                                </h5>
+                                </div><?php break;?>
+                            <?php case "2": ?><div class="ui center aligned segment" data-content="您没有用户管理的权限">
+                                    <h5 class="ui disabled icon header">
+                                        <i class="users icon"></i>
+                                        <div class="content">
+                                            用户管理
+                                        </div>
+                                        <div class="sub header">管理会员账号与限定的管理员账号</div>
+                                    </h5>
                                 </div>
-                                <div class="sub header">管理订单的状态</div>
-                            </h5>
-                        </div>
+                                <div class="ui center aligned segment" data-content="拥有管理所有商店的权限">
+                                    <h5 class="ui red icon header">
+                                        <i class="archive icon"></i>
+                                        <div class="content">
+                                            商品管理
+                                        </div>
+                                        <div class="sub header">管理商店的商品</div>
+                                    </h5>
+                                </div>
+                                <div class="ui center aligned segment" data-content="您没有订单管理的权限">
+                                    <h5 class="ui disabled icon header">
+                                        <i class="shipping icon"></i>
+                                        <div class="content">
+                                            订单管理
+                                        </div>
+                                        <div class="sub header">管理订单的状态</div>
+                                    </h5>
+                                </div><?php break;?>
+                            <?php case "3": ?><div class="ui center aligned segment" data-content="您没有用户管理的权限">
+                                    <h5 class="ui disabled icon header">
+                                        <i class="users icon"></i>
+                                        <div class="content">
+                                            用户管理
+                                        </div>
+                                        <div class="sub header">管理会员账号与限定的管理员账号</div>
+                                    </h5>
+                                </div>
+                                <div class="ui center aligned segment" data-content="您没有商品管理的权限">
+                                    <h5 class="ui disabled icon header">
+                                        <i class="archive icon"></i>
+                                        <div class="content">
+                                            商品管理
+                                        </div>
+                                        <div class="sub header">管理商店的商品</div>
+                                    </h5>
+                                </div>
+                                <div class="ui center aligned segment" data-content="拥有管理所有订单的权限">
+                                    <h5 class="ui brown icon header">
+                                        <i class="shipping icon"></i>
+                                        <div class="content">
+                                            订单管理
+                                        </div>
+                                        <div class="sub header">管理订单的状态</div>
+                                    </h5>
+                                </div><?php break;?>
+                            <?php case "4": ?><div class="ui center aligned segment" data-content="拥有修改除了您和系统管理员之外所有用户的权限">
+                                    <h5 class="ui blue icon header">
+                                        <i class="users icon"></i>
+                                        <div class="content">
+                                            用户管理
+                                        </div>
+                                        <div class="sub header">管理会员账号与限定的管理员账号</div>
+                                    </h5>
+                                </div>
+                                <div class="ui center aligned segment" data-content="您没有商品管理的权限">
+                                    <h5 class="ui disabled icon header">
+                                        <i class="archive icon"></i>
+                                        <div class="content">
+                                            商品管理
+                                        </div>
+                                        <div class="sub header">管理商店的商品</div>
+                                    </h5>
+                                </div>
+                                <div class="ui center aligned segment" data-content="您没有订单管理的权限">
+                                    <h5 class="ui disabled icon header">
+                                        <i class="shipping icon"></i>
+                                        <div class="content">
+                                            订单管理
+                                        </div>
+                                        <div class="sub header">管理订单的状态</div>
+                                    </h5>
+                                </div><?php break;?>
+                            <?php case "5": ?><div class="ui center aligned segment" data-content="您没有用户管理的权限">
+                                    <h5 class="ui disabled icon header">
+                                        <i class="users icon"></i>
+                                        <div class="content">
+                                            用户管理
+                                        </div>
+                                        <div class="sub header">管理会员账号与限定的管理员账号</div>
+                                    </h5>
+                                </div>
+                                <div class="ui center aligned segment" data-content="拥有管理您自己商店的权限">
+                                    <h5 class="ui red icon header">
+                                        <i class="archive icon"></i>
+                                        <div class="content">
+                                            商品管理
+                                        </div>
+                                        <div class="sub header">管理商店的商品</div>
+                                    </h5>
+                                </div>
+                                <div class="ui center aligned segment" data-content="拥有管理您商店订单的权限">
+                                    <h5 class="ui brown icon header">
+                                        <i class="shipping icon"></i>
+                                        <div class="content">
+                                            订单管理
+                                        </div>
+                                        <div class="sub header">管理订单的状态</div>
+                                    </h5>
+                                </div><?php break; endswitch;?>
                     </div>
                 </div>
                 <div class="ui segment">
