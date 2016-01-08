@@ -52,6 +52,10 @@
     .ui.horizontal.segments>.segment .ui.icon.header .content {
         padding: 0;
     }
+    
+    tr {
+        white-space: nowrap;
+    }
     </style>
 </head>
 
@@ -192,48 +196,13 @@
                     </div>
                 </div>
                 <div class="ui segment">
-                    <h4>站点商品总览</h4>
-                    <div class="ui horizontal segments">
-                        <div class="ui mini statistic segment">
-                            <div class="value">
-                                {$data.itemType}
-                            </div>
-                            <div class="label">
-                                在售商品种类
-                            </div>
-                        </div>
-                        <div class="ui mini statistic segment">
-                            <div class="value">
-                                {$data.orderNumber}
-                            </div>
-                            <div class="label">
-                                订单数量
-                            </div>
-                        </div>
-                        <div class="ui mini statistic segment">
-                            <div class="value">
-                                {$data.orderQuantity}
-                            </div>
-                            <div class="label">
-                                销售量
-                            </div>
-                        </div>
-                        <div class="ui mini statistic segment">
-                            <div class="value">
-                                {$data.outStock}
-                            </div>
-                            <div class="label">
-                                缺货商品种类
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui segment">
-                    <h4>站点商店总览</h4>
+                    <h4>店铺列表</h4>
                     <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
+                                <th class="no-sort"></th>
                                 <th>商店名</th>
+                                <th>管理员</th>
                                 <th>商品种类</th>
                                 <th>销售量</th>
                                 <th>销售额</th>
@@ -242,30 +211,74 @@
                         <tbody>
                             <volist name="shopItem" id="shopItem">
                                 <tr>
-                                    <td>{$shopItem.shopName}</td>
-                                    <td>{$shopItem.shopItem}</td>
-                                    <td>{$shopItem.shopSale}</td>
-                                    <td>{$shopItem.shopProfit}</td>
+                                    <td class="collapsing selectable" data-sort-value="{$shopItem.enable}">
+                                        <div class="ui fitted slider checkbox">
+                                            <!-- {$shopItem.enable?checked:''} -->
+                                            <if condition="$shopItem.enable eq '1'">
+                                                <input type="checkbox" checked disabled>
+                                                <else />
+                                                <input type="checkbox" disabled>
+                                            </if>
+                                            <label></label>
+                                        </div>
+                                    </td>
+                                    <td class="selectable" data-sort-value="{$shopItem.shopName}"><a href="#">{$shopItem.shopName}</a></td>
+                                    <td class="selectable" data-sort-value="{$shopItem.adminId}"><a href="#">{$shopItem.adminName}</a></td>
+                                    <td class="selectable" data-sort-value="{$shopItem.itemType}"><a href="#">{$shopItem.itemType}</a></td>
+                                    <td class="selectable" data-sort-value="{$shopItem.itemSales}"><a href="#">{$shopItem.itemSales}</a></td>
+                                    <td class="selectable" data-sort-value="{$shopItem.shopProfit}"><a href="#">{$shopItem.shopProfit}</a></td>
                                 </tr>
                             </volist>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th>共{$data.shopNum}家 {$data.shopDisabled}家已被封禁</th>
                                 <th></th>
                                 <th></th>
-                                <th>
-                                    <div class="ui tiny buttons">
-                                        <a class="ui button" href="{:U('Admin/dashboard/shopList')}">店铺管理</a>
-                                        <div class="or" data-text="或"></div>
-                                        <a class="ui positive button" href="{:U('Admin/dashboard/itemList')}">商品管理</a>
-                                    </div>
-                                </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>共{$data.shopCount}家</th>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="ui small modal">
+        <i class="close icon"></i>
+        <div class="header">
+            修改商品信息
+        </div>
+        <div class="content center aligned ">
+            <div class="ui form">
+                <div class="field">
+                    <label>商品名</label>
+                    <input rows="1" name="itemName" id="itemName">
+                </div>
+                <div class="field">
+                    <label>商品介绍</label>
+                    <input rows="4" name="itemIntro" id="itemIntro">
+                </div>
+                <div class="field">
+                    <label>销售价</label>
+                    <input rows="1" name="itemPrice" id="itemPrice">
+                </div>
+                <div class="field">
+                    <label>库存量</label>
+                    <input rows="1" name="itemStock" id="itemStock">
+                </div>
+                <div class="field">
+                    <div class="ui toggle checkbox">
+                        <label>销售状态</label>
+                        <input type="checkbox" name="itemStatus" id="itemStatus">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui button">取消</div>
+            <div class="ui button">提交</div>
         </div>
     </div>
     <div class="ui inverted vertical footer segment">
@@ -277,8 +290,67 @@
         </div>
     </div>
     <script>
-        //initialize
+    //initialize
+    jQuery(document).ready(function($) {
         $('table').tablesort();
+
+        $('.ui.modal').modal();
+
+        $('.selectable a').on('click', function(event) {
+            $('.error').removeClass('error');
+            $('.ui.toggle.checked').removeClass('checked');
+
+            var Nodes = this.parentNode.parentNode;
+            var Childs = Nodes.querySelectorAll('.selectable');
+            $('#itemName').val(Childs[1].getAttribute('data-sort-value'));
+            $('#itemIntro').val(Childs[2].getAttribute('data-sort-value'));
+            $('#itemPrice').val(Childs[3].getAttribute('data-sort-value'));
+            $('#itemStock').val(Childs[4].getAttribute('data-sort-value'));
+            console.log(Childs[0].getAttribute('data-sort-value'));
+            if(Childs[0].getAttribute('data-sort-value')==1){
+                $(".ui.toggle.checkbox").checkbox('set checked');
+            }else{
+                $(".ui.toggle.checkbox").checkbox('set unchecked');
+            }
+            $('.ui.modal').modal('show');
+        });
+
+        $('.ui.form').form({
+            on: 'blur',
+            fields: {
+                itemName: {
+                    identifier: 'itemName',
+                    rules: [{
+                        type: 'empty',
+                        prompt: '请输入商品名'
+                    }]
+                },
+                itemIntro: {
+                    identifier: 'itemIntro',
+                    rules: [{
+                        type: 'empty',
+                        prompt: '请输入商品介绍'
+                    }]
+                },
+                itemPrice: {
+                    identifier: 'itemPrice',
+                    rules: [{
+                        type: 'integer[1..10000000]',
+                        prompt: '请输入有效的商品价格'
+                    }]
+                },
+                itemStock: {
+                    identifier: 'itemStock',
+                    rules: [{
+                        type: 'integer[0..10000000]',
+                        prompt: '请输入有效的商品库存'
+                    }]
+                }
+            }
+        }).submit( function (e){
+            e.preventDefault();
+        });
+    });
     </script>
 </body>
 
