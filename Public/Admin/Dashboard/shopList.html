@@ -56,6 +56,9 @@
     tr {
         white-space: nowrap;
     }
+    .ui.animated.fade.green.button{
+        margin: 100px;
+    }
     </style>
 </head>
 
@@ -196,51 +199,70 @@
                     </div>
                 </div>
                 <div class="ui segment">
-                    <h4>店铺列表</h4>
-                    <table class="ui sortable center aligned fixed table">
-                        <thead>
-                            <tr>
-                                <th class="no-sort"></th>
-                                <th>商店名</th>
-                                <th>管理员</th>
-                                <th>商品种类</th>
-                                <th>销售量</th>
-                                <th>销售额</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <volist name="shopItem" id="shopItem">
+                    <if condition="$data.adminSuperior eq 5">
+                        <if condition="$data.shopId eq null">
+                            <div class="ui center aligned grid">
+                                <div class="ui animated fade green button">
+                                    <div class="visible content">
+                                        <i class="warning icon"></i>
+                                        尚未拥有店铺
+                                    </div>
+                                    <div class="hidden content">
+                                        <i class="checkmark box icon"></i>
+                                        马上新建
+                                    </div>
+                                </div>
+                            </div>
+                        <else/>
+                            <h4>店铺信息</h4>
+                        </if>
+                    <else />
+                        <h4>店铺列表</h4>
+                        <table class="ui sortable center aligned fixed table">
+                            <thead>
                                 <tr>
-                                    <td class="collapsing selectable" data-sort-value="{$shopItem.enable}">
-                                        <div class="ui fitted slider checkbox">
-                                            <!-- {$shopItem.enable?checked:''} -->
-                                            <if condition="$shopItem.enable eq '1'">
-                                                <input type="checkbox" checked disabled>
-                                                <else />
-                                                <input type="checkbox" disabled>
-                                            </if>
-                                            <label></label>
-                                        </div>
-                                    </td>
-                                    <td class="selectable" data-sort-value="{$shopItem.shopName}"><a href="#">{$shopItem.shopName}</a></td>
-                                    <td class="selectable" data-sort-value="{$shopItem.adminId}"><a href="#">{$shopItem.adminName}</a></td>
-                                    <td class="selectable" data-sort-value="{$shopItem.itemType}"><a href="#">{$shopItem.itemType}</a></td>
-                                    <td class="selectable" data-sort-value="{$shopItem.itemSales}"><a href="#">{$shopItem.itemSales}</a></td>
-                                    <td class="selectable" data-sort-value="{$shopItem.shopProfit}"><a href="#">{$shopItem.shopProfit}</a></td>
+                                    <th class="no-sort"></th>
+                                    <th>商店名</th>
+                                    <th>管理员</th>
+                                    <th>商品种类</th>
+                                    <th>销售量</th>
+                                    <th>销售额</th>
                                 </tr>
-                            </volist>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th>共{$data.shopCount}家</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <volist name="shopItem" id="shopItem">
+                                    <tr>
+                                        <td class="collapsing selectable" data-sort-value="{$shopItem.enable}">
+                                            <div class="ui fitted slider checkbox">
+                                                <!-- {$shopItem.enable?checked:''} -->
+                                                <if condition="$shopItem.enable eq '1'">
+                                                    <input type="checkbox" checked disabled>
+                                                    <else />
+                                                    <input type="checkbox" disabled>
+                                                </if>
+                                                <label></label>
+                                            </div>
+                                        </td>
+                                        <td class="selectable" data-sort-value="{$shopItem.shopName}"><a href="#">{$shopItem.shopName}</a></td>
+                                        <td class="selectable" data-sort-value="{$shopItem.adminId}"><a href="#">{$shopItem.adminName}</a></td>
+                                        <td class="selectable" data-sort-value="{$shopItem.itemType}"><a href="#">{$shopItem.itemType}</a></td>
+                                        <td class="selectable" data-sort-value="{$shopItem.itemSales}"><a href="#">{$shopItem.itemSales}</a></td>
+                                        <td class="selectable" data-sort-value="{$shopItem.shopProfit}"><a href="#">{$shopItem.shopProfit}</a></td>
+                                    </tr>
+                                </volist>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>共{$data.shopCount}家</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </if>
                 </div>
             </div>
         </div>
