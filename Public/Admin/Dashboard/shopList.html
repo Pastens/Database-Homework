@@ -56,8 +56,13 @@
     tr {
         white-space: nowrap;
     }
-    .ui.animated.fade.green.button{
+    
+    .ui.animated.fade.green.button {
         margin: 100px;
+    }
+
+    .ui.animated.fade.red.button {
+        margin: 30px;
     }
     </style>
 </head>
@@ -200,23 +205,45 @@
                 </div>
                 <div class="ui segment">
                     <if condition="$data.adminSuperior eq 5">
-                        <if condition="$data.shopId eq null">
+                        <if condition="$data.status eq 0">
                             <div class="ui center aligned grid">
                                 <div class="ui animated fade green button">
                                     <div class="visible content">
-                                        <i class="warning icon"></i>
-                                        尚未拥有店铺
+                                        <i class="warning icon"></i> 尚未拥有店铺
                                     </div>
                                     <div class="hidden content">
-                                        <i class="checkmark box icon"></i>
-                                        马上新建
+                                        <i class="checkmark box icon"></i> 马上新建
                                     </div>
                                 </div>
                             </div>
-                        <else/>
+                            <else/>
                             <h4>店铺信息</h4>
+                            <table class="ui center aligned fixed table">
+                                <thead>
+                                    <tr>
+                                        <th>商店名</th>
+                                        <th>管理员</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{$data.shopName}</td>
+                                        <td>{$data.shopAdmin}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="ui center aligned grid">
+                                <div class="ui animated fade red button">
+                                    <div class="visible content">
+                                        <i class="warning icon"></i> 修改店铺名称
+                                    </div>
+                                    <div class="hidden content">
+                                        <i class="checkmark box icon"></i> 点击这里
+                                    </div>
+                                </div>
+                            </div>
                         </if>
-                    <else />
+                        <else />
                         <h4>店铺列表</h4>
                         <table class="ui sortable center aligned fixed table">
                             <thead>
@@ -234,7 +261,6 @@
                                     <tr>
                                         <td class="collapsing selectable" data-sort-value="{$shopItem.enable}">
                                             <div class="ui fitted slider checkbox">
-                                                <!-- {$shopItem.enable?checked:''} -->
                                                 <if condition="$shopItem.enable eq '1'">
                                                     <input type="checkbox" checked disabled>
                                                     <else />
@@ -244,10 +270,10 @@
                                             </div>
                                         </td>
                                         <td class="selectable" data-sort-value="{$shopItem.shopName}"><a href="#">{$shopItem.shopName}</a></td>
-                                        <td class="selectable" data-sort-value="{$shopItem.adminId}"><a href="#">{$shopItem.adminName}</a></td>
-                                        <td class="selectable" data-sort-value="{$shopItem.itemType}"><a href="#">{$shopItem.itemType}</a></td>
-                                        <td class="selectable" data-sort-value="{$shopItem.itemSales}"><a href="#">{$shopItem.itemSales}</a></td>
-                                        <td class="selectable" data-sort-value="{$shopItem.shopProfit}"><a href="#">{$shopItem.shopProfit}</a></td>
+                                        <td class="selectable" data-sort-value="{$shopItem.adminName}">{$shopItem.adminName}</td>
+                                        <td class="selectable" data-sort-value="{$shopItem.itemType}">{$shopItem.itemType}</td>
+                                        <td class="selectable" data-sort-value="{$shopItem.itemSales}">{$shopItem.itemSales}</td>
+                                        <td class="selectable" data-sort-value="{$shopItem.shopProfit}">{$shopItem.shopProfit}</td>
                                     </tr>
                                 </volist>
                             </tbody>
@@ -275,25 +301,17 @@
         <div class="content center aligned ">
             <div class="ui form">
                 <div class="field">
-                    <label>商品名</label>
-                    <input rows="1" name="itemName" id="itemName">
+                    <label>商店名</label>
+                    <input rows="1" name="shopName" id="shopName">
                 </div>
                 <div class="field">
-                    <label>商品介绍</label>
-                    <input rows="4" name="itemIntro" id="itemIntro">
-                </div>
-                <div class="field">
-                    <label>销售价</label>
-                    <input rows="1" name="itemPrice" id="itemPrice">
-                </div>
-                <div class="field">
-                    <label>库存量</label>
-                    <input rows="1" name="itemStock" id="itemStock">
+                    <label>商店管理员</label>
+                    <input rows="4" name="shopAdmin" id="shopAdmin">
                 </div>
                 <div class="field">
                     <div class="ui toggle checkbox">
-                        <label>销售状态</label>
-                        <input type="checkbox" name="itemStatus" id="itemStatus">
+                        <label>商店状态</label>
+                        <input type="checkbox" name="shopStatus" id="shopStatus">
                     </div>
                 </div>
             </div>
@@ -324,52 +342,20 @@
 
             var Nodes = this.parentNode.parentNode;
             var Childs = Nodes.querySelectorAll('.selectable');
-            $('#itemName').val(Childs[1].getAttribute('data-sort-value'));
-            $('#itemIntro').val(Childs[2].getAttribute('data-sort-value'));
-            $('#itemPrice').val(Childs[3].getAttribute('data-sort-value'));
-            $('#itemStock').val(Childs[4].getAttribute('data-sort-value'));
+            $('#shopName').val(Childs[1].getAttribute('data-sort-value'));
+            $('#shopAdmin').val(Childs[2].getAttribute('data-sort-value'));
             console.log(Childs[0].getAttribute('data-sort-value'));
-            if(Childs[0].getAttribute('data-sort-value')==1){
+            if (Childs[0].getAttribute('data-sort-value') == 1) {
                 $(".ui.toggle.checkbox").checkbox('set checked');
-            }else{
+            } else {
                 $(".ui.toggle.checkbox").checkbox('set unchecked');
             }
             $('.ui.modal').modal('show');
         });
 
         $('.ui.form').form({
-            on: 'blur',
-            fields: {
-                itemName: {
-                    identifier: 'itemName',
-                    rules: [{
-                        type: 'empty',
-                        prompt: '请输入商品名'
-                    }]
-                },
-                itemIntro: {
-                    identifier: 'itemIntro',
-                    rules: [{
-                        type: 'empty',
-                        prompt: '请输入商品介绍'
-                    }]
-                },
-                itemPrice: {
-                    identifier: 'itemPrice',
-                    rules: [{
-                        type: 'integer[1..10000000]',
-                        prompt: '请输入有效的商品价格'
-                    }]
-                },
-                itemStock: {
-                    identifier: 'itemStock',
-                    rules: [{
-                        type: 'integer[0..10000000]',
-                        prompt: '请输入有效的商品库存'
-                    }]
-                }
-            }
-        }).submit( function (e){
+            on: 'blur'
+        }).submit(function(e) {
             e.preventDefault();
         });
     });

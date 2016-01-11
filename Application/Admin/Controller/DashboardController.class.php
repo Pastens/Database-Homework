@@ -88,35 +88,15 @@ class DashboardController extends Controller {
 			if($data['adminSuperior'] == '4'){
 				$this->error('您没有访问该部分的权限');
 			}else if($data['adminSuperior'] == '5'){
-				$shopId = M('Shop') -> select();
-				$data['shopCount'] = count($shopId);
-
-				for($i=0;$i<count($shopId);++$i){
-					$shopData[$i]['enable'] = $shopId[$i][enable];
-					$shopData[$i]['adminId'] = $shopId[$i][adminid];
-					$shopData[$i]['shopName'] = $shopId[$i][shopname];
-
-					if($shopId[$i][adminid]==null){
-						$shopData[$i]['adminName'] = "系统管理员";
-					}else{
-						$shopData[$i]['adminName'] = M('Admin') -> where("adminId='%d'",$shopId[$i][adminid])->getField('adminNickname');
-					}
-
-					$shopItem = M('Products')->where("shopId='%d'",$shopId[$i][shopid])->select();
-					$shopData[$i]['itemType'] = count($shopItem);
-					$shopData[$i]['itemSales'] = 0;
-					$shopData[$i]['shopProfit'] = 0;
-					for($j=0;$j<count($shopItem);++$j){
-						$sales = M('Orderitems')->where("productId='%d'",$shopItem[$j][productid])->select();
-						for($k=0;$k<count($sales);++$k){
-							echo $sales[$k][quantity];
-							$shopData[$i]['itemSales'] += $sales[$k][quantity];
-							$shopData[$i]['shopProfit'] += $sales[$k][quantity] * $shopItem[$j][productprice];
-						}
-					}
+				$shopId = M('Shop') ->where("adminId='%d'",$rawData[adminid]) ->select();
+				if($shopId){
+					$data['status'] = 1;
+					$data['shopName'] = $shopId[shopname];
+					$data['shopAdmin'] = $rawData[adminnickname];
+				}else{
+					$data['status'] = 0;
 				}
 				$data['adminName'] = $rawData[adminnickname];
-				$this->assign('shopItem',$shopData);
 				$this->assign('data',$data);
 			}
 			else{
