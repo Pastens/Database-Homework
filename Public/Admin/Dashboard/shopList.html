@@ -248,37 +248,38 @@
                         <table class="ui sortable center aligned fixed table">
                             <thead>
                                 <tr>
-                                    <th class="no-sort"></th>
                                     <th>商店名</th>
                                     <th>管理员</th>
                                     <th>商品种类</th>
                                     <th>销售量</th>
                                     <th>销售额</th>
+                                    <th>店铺状态</th>
+                                    <th>操作</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <volist name="shopItem" id="shopItem">
                                     <tr>
-                                        <td class="collapsing selectable" data-sort-value="{$shopItem.enable}">
-                                            <div class="ui fitted slider checkbox">
-                                                <if condition="$shopItem.enable eq '1'">
-                                                    <input type="checkbox" checked disabled>
-                                                    <else />
-                                                    <input type="checkbox" disabled>
-                                                </if>
-                                                <label></label>
-                                            </div>
-                                        </td>
                                         <td class="selectable" data-sort-value="{$shopItem.shopName}"><a href="#">{$shopItem.shopName}</a></td>
                                         <td class="selectable" data-sort-value="{$shopItem.adminName}">{$shopItem.adminName}</td>
                                         <td class="selectable" data-sort-value="{$shopItem.itemType}">{$shopItem.itemType}</td>
                                         <td class="selectable" data-sort-value="{$shopItem.itemSales}">{$shopItem.itemSales}</td>
                                         <td class="selectable" data-sort-value="{$shopItem.shopProfit}">{$shopItem.shopProfit}</td>
+
+                                        <td class="selectable" data-sort-value="{$shopItem.enable}"><a href="#">{$shopItem.enable}</a></td>
+                                    
+                                        <if condition="$shopItem.enable eq '正常'">
+                                            <td data-value="{$shopItem.itemId}" data-sort-value="{$shopItem.enable}"><div class="ui tiny red button">禁止</div></td>
+                                        <else />
+                                            <td data-value="{$shopItem.itemId}" data-sort-value="{$shopItem.enable}"><div class="ui tiny green button">解禁</div></td>
+                                        </if>
                                     </tr>
                                 </volist>
                             </tbody>
                             <tfoot>
                                 <tr>
+                                    <th></th>
                                     <th></th>
                                     <th></th>
                                     <th></th>
@@ -293,34 +294,6 @@
             </div>
         </div>
     </div>
-    <div class="ui small modal">
-        <i class="close icon"></i>
-        <div class="header">
-            修改商品信息
-        </div>
-        <div class="content center aligned ">
-            <div class="ui form">
-                <div class="field">
-                    <label>商店名</label>
-                    <input rows="1" name="shopName" id="shopName">
-                </div>
-                <div class="field">
-                    <label>商店管理员</label>
-                    <input rows="4" name="shopAdmin" id="shopAdmin">
-                </div>
-                <div class="field">
-                    <div class="ui toggle checkbox">
-                        <label>商店状态</label>
-                        <input type="checkbox" name="shopStatus" id="shopStatus">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="actions">
-            <div class="ui button">取消</div>
-            <div class="ui button">提交</div>
-        </div>
-    </div>
     <div class="ui inverted vertical footer segment">
         <div class="ui center aligned container">
             <div class="ui horizontal inverted small divided link list">
@@ -333,31 +306,6 @@
     //initialize
     jQuery(document).ready(function($) {
         $('table').tablesort();
-
-        $('.ui.modal').modal();
-
-        $('.selectable a').on('click', function(event) {
-            $('.error').removeClass('error');
-            $('.ui.toggle.checked').removeClass('checked');
-
-            var Nodes = this.parentNode.parentNode;
-            var Childs = Nodes.querySelectorAll('.selectable');
-            $('#shopName').val(Childs[1].getAttribute('data-sort-value'));
-            $('#shopAdmin').val(Childs[2].getAttribute('data-sort-value'));
-            console.log(Childs[0].getAttribute('data-sort-value'));
-            if (Childs[0].getAttribute('data-sort-value') == 1) {
-                $(".ui.toggle.checkbox").checkbox('set checked');
-            } else {
-                $(".ui.toggle.checkbox").checkbox('set unchecked');
-            }
-            $('.ui.modal').modal('show');
-        });
-
-        $('.ui.form').form({
-            on: 'blur'
-        }).submit(function(e) {
-            e.preventDefault();
-        });
     });
     </script>
 </body>

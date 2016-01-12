@@ -104,7 +104,7 @@ class DashboardController extends Controller {
 				$data['shopCount'] = count($shopId);
 
 				for($i=0;$i<count($shopId);++$i){
-					$shopData[$i]['enable'] = $shopId[$i][enable];
+					$shopData[$i]['enable'] = $shopId[$i][enable] ? "正常":"被禁止";
 					$shopData[$i]['adminId'] = $shopId[$i][adminid];
 					$shopData[$i]['shopName'] = $shopId[$i][shopname];
 
@@ -152,7 +152,9 @@ class DashboardController extends Controller {
 					$data['itemType'] = count($shopItem);
 
 					for($i=0;$i<count($shopItem);++$i){
-						$shopData[$i]['enable'] = $shopItem[$i][enable];
+						$shopData[$i]['itemId'] = $shopItem[$i][productid];
+
+						$shopData[$i]['enable'] = $shopItem[$i][enable] ? "正常" : "被禁止";
 						$shopData[$i]['itemName'] = $shopItem[$i][productname];
 						$shopData[$i]['itemIntro'] = $shopItem[$i][productintro];
 						$shopData[$i]['itemPrice'] = $shopItem[$i][productprice];
@@ -178,7 +180,9 @@ class DashboardController extends Controller {
 				$data['itemType'] = count($shopItem);
 
 				for($i=0;$i<count($shopItem);++$i){
-					$shopData[$i]['enable'] = $shopItem[$i][enable];
+					$shopData[$i]['itemId'] = $shopItem[$i][productid];
+
+					$shopData[$i]['enable'] = $shopItem[$i][enable] ? "正常" : "被禁止";
 					$shopData[$i]['itemName'] = $shopItem[$i][productname];
 					$shopData[$i]['itemIntro'] = $shopItem[$i][productintro];
 					$shopData[$i]['itemPrice'] = $shopItem[$i][productprice];
@@ -220,7 +224,7 @@ class DashboardController extends Controller {
 						$shopData[$i]['orderId'] = $shopItem[$i][orderid];
 						$shopData[$i]['orderUser'] = M('Users') -> where("userId='%d'",$shopItem[$i][userid]) ->getField('userName');
 						$shopData[$i]['orderPrice'] = $shopItem[$i][orderprice];
-						$shopData[$i]['orderTime'] = $shopItem[$i][timestamp];
+						$shopData[$i]['orderTime'] = date('Y-m-d H:m:s',$shopItem[$i][timestamp]);
 						$shopData[$i]['orderStatus'] = $shopItem[$i][status];
 					}
 				}else{
@@ -239,7 +243,7 @@ class DashboardController extends Controller {
 					$shopData[$i]['orderId'] = $shopItem[$i][orderid];
 					$shopData[$i]['orderUser'] = M('Users') -> where("userId='%d'",$shopItem[$i][userid]) ->getField('userName');
 					$shopData[$i]['orderPrice'] = $shopItem[$i][orderprice];
-					$shopData[$i]['orderTime'] = $shopItem[$i][timestamp];
+					$shopData[$i]['orderTime'] = date('Y-m-d H:m:s',$shopItem[$i][timestamp]);
 					$shopData[$i]['orderStatus'] = $shopItem[$i][status];
 				}
 				$data['adminName'] = $rawData[adminnickname];
@@ -393,7 +397,23 @@ class DashboardController extends Controller {
 	}
 
 	public function apiList(){
-		$this->display();
+		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
+		if($condition){
+			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
+			$data['adminSuperior'] = $rawData[superior];
+			//Check superior
+			if($data['adminSuperior'] == '0' || $data['adminSuperior'] == '1'){
+				$data['adminName'] = $rawData[adminnickname];
+				$this->assign('logInfo',$Info);
+				$this->assign('data',$data);
+			}
+			else{
+				$this->error('您没有访问该部分的权限');
+			}
+			$this->display();
+        }else{
+        	$this->redirect('/Admin/Login');
+        }
 	}
 
 	public function devDocument(){

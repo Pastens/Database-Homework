@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>管理员管理 —— Eshop</title>
+    <title>API列表 —— Eshop</title>
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/semantic/semantic/dist/semantic.min.css">
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.tablesort.js"></script>
@@ -53,9 +53,7 @@
         padding: 0;
     }
     
-    tr {
-        white-space: nowrap;
-    }
+
     </style>
 </head>
 
@@ -190,52 +188,39 @@
                     <div class="ui breadcrumb">
                         <a class="section" href="{:U('Admin/dashboard/index')}">管理面板</a>
                         <i class="right chevron icon divider"></i>
-                        <div class="section">商店管理</div>
+                        <div class="section">系统管理</div>
                         <i class="right arrow icon divider"></i>
-                        <div class="active section">管理员管理</div>
+                        <div class="active section">API列表</div>
                     </div>
                 </div>
                 <div class="ui segment">
-                    <h4>管理员列表</h4>
+                    <h4>API列表</h4>
                     <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
-                                <th>管理员ID</th>
-                                <th>系统角色</th>
-                                <th>用户名</th>
-                                <th>昵称</th>
-                                <th>登录次数</th>
-                                <th>用户状态</th>
-                                <th>操作</th>
+                                <th>API ID</th>
+                                <th>API 路径</th>
+                                <th>传入参数</th>
+                                <th>返回参数</th>
+                                <th>调用方式</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <volist name="adminInfo" id="adminInfo">
-                                <tr>
-                                    <td class="selectable" data-sort-value="{$adminInfo.adminId}"><a href="#">{$adminInfo.adminId}</a></td>
-                                    <td class="selectable" data-sort-value="{$adminInfo.adminSuper}"><a href="#">{$adminInfo.adminSuperior}</a></td>
-                                    <td class="selectable" data-sort-value="{$adminInfo.adminName}"><a href="#">{$adminInfo.adminName}</a></td>
-                                    <td class="selectable" data-sort-value="{$adminInfo.adminNickname}"><a href="#">{$adminInfo.adminNickname}</a></td>
-                                    <td class="selectable" data-sort-value="{$adminInfo.adminLog}"><a href="#">{$adminInfo.adminLog}</a></td>
-                                    <td class="selectable" data-sort-value="{$adminInfo.adminStatus}"><a href="#">{$adminInfo.adminStatus}</a></td>
-                                    
-                                    <if condition="$adminInfo.adminStatus eq '正常'">
-                                        <td data-value="{$adminInfo.adminId}" data-sort-value="{$adminInfo.adminStatus}"><div class="ui tiny red button">禁止管理员</div></td>
-                                    <else />
-                                        <td data-value="{$adminInfo.adminId}" data-sort-value="{$adminInfo.adminStatus}"><div class="ui tiny green button">解禁管理员</div></td>
-                                    </if>
-                                </tr>
-                            </volist>
+                            <tr>
+                                <td class="selectable"><a href="#">1</a></td>
+                                <td class="selectable" data-sort-value=""><a href="#">后台登录</a></td>
+                                <td class="selectable"><a href="#">adminName, adminPassword, adminAutologin</a></td>
+                                <td class="selectable"><a href="#">data:{status, info}</a></td>
+                                <td class="selectable"><a href="#">POST</a></td>
+                            </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th><div class="ui tiny green button">添加管理员</div></th>
                                 <th></th>
                                 <th></th>
                                 <th></th>
                                 <th></th>
-                                <th></th>
-                                <th>共{$data.adminCount}名管理员</th>
+                                <th>共 1 条记录</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -255,63 +240,6 @@
     //initialize
     jQuery(document).ready(function($) {
         $('table').tablesort();
-
-        $('.ui.modal').modal();
-
-        $('.selectable a').on('click', function(event) {
-            $('.error').removeClass('error');
-            $('.ui.toggle.checked').removeClass('checked');
-
-            var Nodes = this.parentNode.parentNode;
-            var Childs = Nodes.querySelectorAll('.selectable');
-            $('#itemName').val(Childs[1].getAttribute('data-sort-value'));
-            $('#itemIntro').val(Childs[2].getAttribute('data-sort-value'));
-            $('#itemPrice').val(Childs[3].getAttribute('data-sort-value'));
-            $('#itemStock').val(Childs[4].getAttribute('data-sort-value'));
-            console.log(Childs[0].getAttribute('data-sort-value'));
-            if(Childs[0].getAttribute('data-sort-value')==1){
-                $(".ui.toggle.checkbox").checkbox('set checked');
-            }else{
-                $(".ui.toggle.checkbox").checkbox('set unchecked');
-            }
-            $('.ui.modal').modal('show');
-        });
-
-        $('.ui.form').form({
-            on: 'blur',
-            fields: {
-                itemName: {
-                    identifier: 'itemName',
-                    rules: [{
-                        type: 'empty',
-                        prompt: '请输入商品名'
-                    }]
-                },
-                itemIntro: {
-                    identifier: 'itemIntro',
-                    rules: [{
-                        type: 'empty',
-                        prompt: '请输入商品介绍'
-                    }]
-                },
-                itemPrice: {
-                    identifier: 'itemPrice',
-                    rules: [{
-                        type: 'integer[1..10000000]',
-                        prompt: '请输入有效的商品价格'
-                    }]
-                },
-                itemStock: {
-                    identifier: 'itemStock',
-                    rules: [{
-                        type: 'integer[0..10000000]',
-                        prompt: '请输入有效的商品库存'
-                    }]
-                }
-            }
-        }).submit( function (e){
-            e.preventDefault();
-        });
     });
     </script>
 </body>

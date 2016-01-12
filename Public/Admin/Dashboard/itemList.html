@@ -200,40 +200,39 @@
                     <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
-                                <th class="no-sort"></th>
                                 <th>商品名</th>
                                 <th>商品介绍</th>
                                 <th>商铺</th>
                                 <th>定价</th>
                                 <th>库存量</th>
                                 <th>销售量</th>
+                                <th>销售状态</th>
+                                <th>操作</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             <volist name="shopItem" id="shopItem">
                                 <tr>
-                                    <td class="collapsing selectable" data-sort-value="{$shopItem.enable}">
-                                        <div class="ui fitted slider checkbox">
-                                            <!-- {$shopItem.enable?checked:''} -->
-                                            <if condition="$shopItem.enable eq '1'">
-                                                <input type="checkbox" checked disabled>
-                                                <else />
-                                                <input type="checkbox" disabled>
-                                            </if>
-                                            <label></label>
-                                        </div>
-                                    </td>
                                     <td class="selectable" data-sort-value="{$shopItem.itemName}"><a href="#">{$shopItem.itemName}</a></td>
                                     <td class="selectable" data-sort-value="{$shopItem.itemIntro}"><a href="#">{$shopItem.itemIntro}</a></td>
                                     <td data-sort-value="{$shopItem.itemShop}" data-sort-value="{$shopItem.itemName}">{$shopItem.itemShop}</td>
                                     <td class="selectable" data-sort-value="{$shopItem.itemPrice}"><a href="#">{$shopItem.itemPrice}</a></td>
                                     <td class="selectable" data-sort-value="{$shopItem.itemStock}"><a href="#">{$shopItem.itemStock}</a></td>
-                                    <td data-sort-value="{$shopItem.itemSales}">{$shopItem.itemSales}</td>
+                                    <td class="selectable" data-sort-value="{$shopItem.itemSales}">{$shopItem.itemSales}</td>
+                                    <td class="selectable" data-sort-value="{$shopItem.enable}"><a href="#">{$shopItem.enable}</a></td>
+                                    
+                                    <if condition="$shopItem.enable eq '正常'">
+                                        <td data-value="{$shopItem.itemId}" data-sort-value="{$shopItem.enable}"><div class="ui tiny red button">禁止</div></td>
+                                    <else />
+                                        <td data-value="{$shopItem.itemId}" data-sort-value="{$shopItem.enable}"><div class="ui tiny green button">解禁</div></td>
+                                    </if>
                                 </tr>
                             </volist>
                         </tbody>
                         <tfoot>
                             <tr>
+                                <th></th>
                                 <th></th>
                                 <th></th>
                                 <th></th>
@@ -306,12 +305,12 @@
 
             var Nodes = this.parentNode.parentNode;
             var Childs = Nodes.querySelectorAll('.selectable');
-            $('#itemName').val(Childs[1].getAttribute('data-sort-value'));
-            $('#itemIntro').val(Childs[2].getAttribute('data-sort-value'));
-            $('#itemPrice').val(Childs[3].getAttribute('data-sort-value'));
-            $('#itemStock').val(Childs[4].getAttribute('data-sort-value'));
-            console.log(Childs[0].getAttribute('data-sort-value'));
-            if(Childs[0].getAttribute('data-sort-value')==1){
+            $('#itemName').val(Childs[0].getAttribute('data-sort-value'));
+            $('#itemIntro').val(Childs[1].getAttribute('data-sort-value'));
+            $('#itemPrice').val(Childs[2].getAttribute('data-sort-value'));
+            $('#itemStock').val(Childs[3].getAttribute('data-sort-value'));
+            console.log(Childs[5].getAttribute('data-sort-value'));
+            if(Childs[5].getAttribute('data-sort-value')== "正常"){
                 $(".ui.toggle.checkbox").checkbox('set checked');
             }else{
                 $(".ui.toggle.checkbox").checkbox('set unchecked');

@@ -213,7 +213,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th></th>
+                                <th><div class="ui tiny green button">添加管理员</div></th>
                                 <th></th>
                                 <th></th>
                                 <th></th>

@@ -188,36 +188,35 @@
                     <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
-                                <th class="no-sort"></th>
                                 <th>商品名</th>
                                 <th>商品介绍</th>
                                 <th>商铺</th>
                                 <th>定价</th>
                                 <th>库存量</th>
                                 <th>销售量</th>
+                                <th>销售状态</th>
+                                <th>操作</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             <?php if(is_array($shopItem)): $i = 0; $__LIST__ = $shopItem;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shopItem): $mod = ($i % 2 );++$i;?><tr>
-                                    <td class="collapsing selectable" data-sort-value="<?php echo ($shopItem["enable"]); ?>">
-                                        <div class="ui fitted slider checkbox">
-                                            <!-- <?php echo ($shopItem["enable?checked:''"]); ?> -->
-                                            <?php if($shopItem["enable"] == '1'): ?><input type="checkbox" checked disabled>
-                                                <?php else: ?>
-                                                <input type="checkbox" disabled><?php endif; ?>
-                                            <label></label>
-                                        </div>
-                                    </td>
                                     <td class="selectable" data-sort-value="<?php echo ($shopItem["itemName"]); ?>"><a href="#"><?php echo ($shopItem["itemName"]); ?></a></td>
                                     <td class="selectable" data-sort-value="<?php echo ($shopItem["itemIntro"]); ?>"><a href="#"><?php echo ($shopItem["itemIntro"]); ?></a></td>
                                     <td data-sort-value="<?php echo ($shopItem["itemShop"]); ?>" data-sort-value="<?php echo ($shopItem["itemName"]); ?>"><?php echo ($shopItem["itemShop"]); ?></td>
                                     <td class="selectable" data-sort-value="<?php echo ($shopItem["itemPrice"]); ?>"><a href="#"><?php echo ($shopItem["itemPrice"]); ?></a></td>
                                     <td class="selectable" data-sort-value="<?php echo ($shopItem["itemStock"]); ?>"><a href="#"><?php echo ($shopItem["itemStock"]); ?></a></td>
-                                    <td data-sort-value="<?php echo ($shopItem["itemSales"]); ?>"><?php echo ($shopItem["itemSales"]); ?></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemSales"]); ?>"><?php echo ($shopItem["itemSales"]); ?></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["enable"]); ?>"><a href="#"><?php echo ($shopItem["enable"]); ?></a></td>
+                                    
+                                    <?php if($shopItem["enable"] == '正常'): ?><td data-value="<?php echo ($shopItem["itemId"]); ?>" data-sort-value="<?php echo ($shopItem["enable"]); ?>"><div class="ui tiny red button">禁止</div></td>
+                                    <?php else: ?>
+                                        <td data-value="<?php echo ($shopItem["itemId"]); ?>" data-sort-value="<?php echo ($shopItem["enable"]); ?>"><div class="ui tiny green button">解禁</div></td><?php endif; ?>
                                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                         </tbody>
                         <tfoot>
                             <tr>
+                                <th></th>
                                 <th></th>
                                 <th></th>
                                 <th></th>
@@ -290,12 +289,12 @@
 
             var Nodes = this.parentNode.parentNode;
             var Childs = Nodes.querySelectorAll('.selectable');
-            $('#itemName').val(Childs[1].getAttribute('data-sort-value'));
-            $('#itemIntro').val(Childs[2].getAttribute('data-sort-value'));
-            $('#itemPrice').val(Childs[3].getAttribute('data-sort-value'));
-            $('#itemStock').val(Childs[4].getAttribute('data-sort-value'));
-            console.log(Childs[0].getAttribute('data-sort-value'));
-            if(Childs[0].getAttribute('data-sort-value')==1){
+            $('#itemName').val(Childs[0].getAttribute('data-sort-value'));
+            $('#itemIntro').val(Childs[1].getAttribute('data-sort-value'));
+            $('#itemPrice').val(Childs[2].getAttribute('data-sort-value'));
+            $('#itemStock').val(Childs[3].getAttribute('data-sort-value'));
+            console.log(Childs[5].getAttribute('data-sort-value'));
+            if(Childs[5].getAttribute('data-sort-value')== "正常"){
                 $(".ui.toggle.checkbox").checkbox('set checked');
             }else{
                 $(".ui.toggle.checkbox").checkbox('set unchecked');

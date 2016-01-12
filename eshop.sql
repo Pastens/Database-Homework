@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-01-05 16:05:54
+-- Generation Time: 2016-01-12 16:04:53
 -- 服务器版本： 5.6.27
 -- PHP Version: 5.6.15
 
@@ -41,7 +41,12 @@ CREATE TABLE `es_admin` (
 --
 
 INSERT INTO `es_admin` (`adminId`, `adminName`, `adminNickname`, `adminPassword`, `adminCount`, `enable`, `superior`) VALUES
-(1, 'admin', '系统开发人员', 'e10adc3949ba59abbe56e057f20f883e', 16, 1, 0);
+(1, 'developer', '系统开发人员', 'e10adc3949ba59abbe56e057f20f883e', 47, 1, 0),
+(2, 'sysadmin', '系统管理员', 'e10adc3949ba59abbe56e057f20f883e', 32, 1, 1),
+(3, 'shopadmin', '商店管理员', 'e10adc3949ba59abbe56e057f20f883e', 27, 1, 2),
+(4, 'orderadmin', '订单管理员', 'e10adc3949ba59abbe56e057f20f883e', 5, 1, 3),
+(5, 'useradmin', '用户管理员', 'e10adc3949ba59abbe56e057f20f883e', 5, 1, 4),
+(6, 'shopowner', '加盟客户', 'e10adc3949ba59abbe56e057f20f883e', 5, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -61,7 +66,8 @@ CREATE TABLE `es_orderitems` (
 
 INSERT INTO `es_orderitems` (`orderId`, `productId`, `quantity`) VALUES
 (1, 1, 12),
-(1, 2, 10);
+(1, 2, 3),
+(2, 1, 100);
 
 -- --------------------------------------------------------
 
@@ -83,7 +89,8 @@ CREATE TABLE `es_orders` (
 --
 
 INSERT INTO `es_orders` (`orderId`, `userId`, `orderPrice`, `timestamp`, `enable`, `status`) VALUES
-(1, 1, 13, 0, 1, 0);
+(1, 1, 13, 0, 1, 0),
+(2, 1, 100, 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -110,8 +117,9 @@ CREATE TABLE `es_products` (
   `productPrice` int(32) NOT NULL,
   `productIntro` varchar(255) NOT NULL,
   `productAmount` int(32) NOT NULL,
-  `coverUrl` varchar(255) NOT NULL,
+  `coverUrl` varchar(255) DEFAULT NULL,
   `productCount` int(32) NOT NULL,
+  `shopId` int(32) NOT NULL,
   `priority` int(32) NOT NULL DEFAULT '1',
   `enable` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -120,9 +128,31 @@ CREATE TABLE `es_products` (
 -- 转存表中的数据 `es_products`
 --
 
-INSERT INTO `es_products` (`productId`, `productName`, `productPrice`, `productIntro`, `productAmount`, `coverUrl`, `productCount`, `priority`, `enable`) VALUES
-(1, '电脑', 1200, '你好电脑啊！', 500, '0', 1, 1, 1),
-(2, '书本', 50, '你好书本啊', 500, '0', 1, 1, 1);
+INSERT INTO `es_products` (`productId`, `productName`, `productPrice`, `productIntro`, `productAmount`, `coverUrl`, `productCount`, `shopId`, `priority`, `enable`) VALUES
+(1, '电脑', 5000, '电脑 5000元上船带回家', 200, '0', 1, 1, 1, 1),
+(2, '机械键盘', 699, 'Cherry G80-3000', 500, '0', 1, 1, 1, 1),
+(3, '移动硬盘', 499, '2TB', 0, '0', 1, 2, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `es_shop`
+--
+
+CREATE TABLE `es_shop` (
+  `shopId` int(32) NOT NULL,
+  `shopName` varchar(255) NOT NULL,
+  `adminId` int(32) DEFAULT NULL,
+  `enable` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `es_shop`
+--
+
+INSERT INTO `es_shop` (`shopId`, `shopName`, `adminId`, `enable`) VALUES
+(1, '系统店面', NULL, 1),
+(2, '测试店面', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -134,9 +164,18 @@ CREATE TABLE `es_systemlog` (
   `logId` int(32) NOT NULL,
   `operationName` varchar(255) NOT NULL,
   `operationUserId` int(32) NOT NULL,
-  `operationUserType` int(4) NOT NULL,
+  `operationUserType` tinyint(1) NOT NULL,
   `timestamp` int(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `es_systemlog`
+--
+
+INSERT INTO `es_systemlog` (`logId`, `operationName`, `operationUserId`, `operationUserType`, `timestamp`) VALUES
+(1, '登录', 1, 0, 0),
+(2, '登录', 6, 0, 1452612862),
+(3, '登录', 1, 0, 1452612874);
 
 -- --------------------------------------------------------
 
@@ -165,6 +204,14 @@ CREATE TABLE `es_users` (
   `userPassword` varchar(255) NOT NULL,
   `enable` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `es_users`
+--
+
+INSERT INTO `es_users` (`userId`, `userName`, `userPassword`, `enable`) VALUES
+(1, 'user', 'e10adc3949ba59abbe56e057f20f883e', 1),
+(2, 'user_disabled', 'e10adc3949ba59abbe56e057f20f883e', 0);
 
 --
 -- Indexes for dumped tables
@@ -203,6 +250,14 @@ ALTER TABLE `es_products`
   ADD PRIMARY KEY (`productId`);
 
 --
+-- Indexes for table `es_shop`
+--
+ALTER TABLE `es_shop`
+  ADD PRIMARY KEY (`shopId`),
+  ADD UNIQUE KEY `shopName` (`shopName`),
+  ADD UNIQUE KEY `adminId` (`adminId`);
+
+--
 -- Indexes for table `es_systemlog`
 --
 ALTER TABLE `es_systemlog`
@@ -230,12 +285,12 @@ ALTER TABLE `es_users`
 -- 使用表AUTO_INCREMENT `es_admin`
 --
 ALTER TABLE `es_admin`
-  MODIFY `adminId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `adminId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- 使用表AUTO_INCREMENT `es_orders`
 --
 ALTER TABLE `es_orders`
-  MODIFY `orderId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `orderId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用表AUTO_INCREMENT `es_productreview`
 --
@@ -245,12 +300,17 @@ ALTER TABLE `es_productreview`
 -- 使用表AUTO_INCREMENT `es_products`
 --
 ALTER TABLE `es_products`
-  MODIFY `productId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `productId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- 使用表AUTO_INCREMENT `es_shop`
+--
+ALTER TABLE `es_shop`
+  MODIFY `shopId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用表AUTO_INCREMENT `es_systemlog`
 --
 ALTER TABLE `es_systemlog`
-  MODIFY `logId` int(32) NOT NULL AUTO_INCREMENT;
+  MODIFY `logId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用表AUTO_INCREMENT `es_userinfo`
 --
@@ -260,7 +320,7 @@ ALTER TABLE `es_userinfo`
 -- 使用表AUTO_INCREMENT `es_users`
 --
 ALTER TABLE `es_users`
-  MODIFY `userId` int(32) NOT NULL AUTO_INCREMENT;
+  MODIFY `userId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 限制导出的表
 --
