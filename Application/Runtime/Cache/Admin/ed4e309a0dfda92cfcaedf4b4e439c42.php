@@ -188,13 +188,12 @@
                     <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
-                                <th class="no-sort"></th>
-                                <th>商品名</th>
-                                <th>商品介绍</th>
-                                <th>商铺</th>
-                                <th>定价</th>
-                                <th>库存量</th>
-                                <th>销售量</th>
+                                <th class="no-sort">订单状态</th>
+                                <th>订单号</th>
+                                <th>订单用户</th>
+                                <th>订单总额</th>
+                                <th>时间</th>
+                                <th>状态</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -208,12 +207,11 @@
                                             <label></label>
                                         </div>
                                     </td>
-                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemName"]); ?>"><a href="#"><?php echo ($shopItem["itemName"]); ?></a></td>
-                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemIntro"]); ?>"><a href="#"><?php echo ($shopItem["itemIntro"]); ?></a></td>
-                                    <td data-sort-value="<?php echo ($shopItem["itemShop"]); ?>" data-sort-value="<?php echo ($shopItem["itemName"]); ?>"><?php echo ($shopItem["itemShop"]); ?></td>
-                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemPrice"]); ?>"><a href="#"><?php echo ($shopItem["itemPrice"]); ?></a></td>
-                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemStock"]); ?>"><a href="#"><?php echo ($shopItem["itemStock"]); ?></a></td>
-                                    <td data-sort-value="<?php echo ($shopItem["itemSales"]); ?>"><?php echo ($shopItem["itemSales"]); ?></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["orderId"]); ?>"><a href="#"><?php echo ($shopItem["orderId"]); ?></a></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["orderUser"]); ?>"><a href="#"><?php echo ($shopItem["orderUser"]); ?></a></td>
+                                    <td data-sort-value="<?php echo ($shopItem["orderPrice"]); ?>"><?php echo ($shopItem["orderPrice"]); ?></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["orderTime"]); ?>"><a href="#"><?php echo ($shopItem["orderTime"]); ?></a></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["orderStatus"]); ?>"><a href="#"><?php echo ($shopItem["orderStatus"]); ?></a></td>
                                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                         </tbody>
                         <tfoot>
@@ -223,8 +221,7 @@
                                 <th></th>
                                 <th></th>
                                 <th></th>
-                                <th></th>
-                                <th>共<?php echo ($data["itemType"]); ?>种</th>
+                                <th>共<?php echo ($data["itemType"]); ?>个订单</th>
                             </tr>
                         </tfoot>
                     </table>

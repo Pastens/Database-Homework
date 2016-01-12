@@ -147,23 +147,28 @@ class DashboardController extends Controller {
 				$this->error('您没有访问该部分的权限');
 			}else if($data['adminSuperior'] == '5'){
 				$shopId = M('Shop') -> where("adminId='%d'",$rawData[adminid])->getField('shopId');
-				$shopItem = M('Products') -> where("shopId='%d'",$shopId)-> select();
-				$data['itemType'] = count($shopItem);
+				if($shopId){
+					$shopItem = M('Products') -> where("shopId='%d'",$shopId)-> select();
+					$data['itemType'] = count($shopItem);
 
-				for($i=0;$i<count($shopItem);++$i){
-					$shopData[$i]['enable'] = $shopItem[$i][enable];
-					$shopData[$i]['itemName'] = $shopItem[$i][productname];
-					$shopData[$i]['itemIntro'] = $shopItem[$i][productintro];
-					$shopData[$i]['itemPrice'] = $shopItem[$i][productprice];
-					$shopData[$i]['itemStock'] = $shopItem[$i][productamount];
-					$shopData[$i]['itemShop'] = M('Shop')->where("shopId='%d'",$shopItem[$i][shopid])->getField('shopName');
-					$shopData[$i]['itemSales'] = 0;
+					for($i=0;$i<count($shopItem);++$i){
+						$shopData[$i]['enable'] = $shopItem[$i][enable];
+						$shopData[$i]['itemName'] = $shopItem[$i][productname];
+						$shopData[$i]['itemIntro'] = $shopItem[$i][productintro];
+						$shopData[$i]['itemPrice'] = $shopItem[$i][productprice];
+						$shopData[$i]['itemStock'] = $shopItem[$i][productamount];
+						$shopData[$i]['itemShop'] = M('Shop')->where("shopId='%d'",$shopItem[$i][shopid])->getField('shopName');
+						$shopData[$i]['itemSales'] = 0;
 
-					$productSale = M('Orderitems') -> where("productId='%d'",$shopItem[$i][productid])->select();
-					for($j=0;$j<count($productSale);++$j){
-						$shopData[$i]['itemSales'] += $productSale[$j][quantity];
+						$productSale = M('Orderitems') -> where("productId='%d'",$shopItem[$i][productid])->select();
+						for($j=0;$j<count($productSale);++$j){
+							$shopData[$i]['itemSales'] += $productSale[$j][quantity];
+						}
 					}
+				}else{
+					$this->redirect('/Admin/Dashboard/shopList');
 				}
+				
 				$data['adminName'] = $rawData[adminnickname];
 				$this->assign('shopItem',$shopData);
 				$this->assign('data',$data);
@@ -205,45 +210,48 @@ class DashboardController extends Controller {
 			if($data['adminSuperior'] == '4'){
 				$this->error('您没有访问该部分的权限');
 			}else if($data['adminSuperior'] == '5'){
-				$shopId = M('Shop') -> where("adminId='%d'",$rawData[adminid])->getField('shopId');
-				$shopItem = M('Products') -> where("shopId='%d'",$shopId)-> select();
-				$data['itemType'] = count($shopItem);
+				$shop = M('Shop') -> where("adminId='%d'",$rawData[adminid]) -> getField("shopId");
+				if($shop){
+					$shopItem = M('Orders') -> where("shopId='%d'",$shop) -> select();
+					$data['itemType'] = count($shopItem);
 
-				for($i=0;$i<count($shopItem);++$i){
-					$shopData[$i]['enable'] = $shopItem[$i][enable];
-					$shopData[$i]['itemName'] = $shopItem[$i][productname];
-					$shopData[$i]['itemIntro'] = $shopItem[$i][productintro];
-					$shopData[$i]['itemPrice'] = $shopItem[$i][productprice];
-					$shopData[$i]['itemStock'] = $shopItem[$i][productamount];
-					$shopData[$i]['itemShop'] = M('Shop')->where("shopId='%d'",$shopItem[$i][shopid])->getField('shopName');
-					$shopData[$i]['itemSales'] = 0;
-
-					$productSale = M('Orderitems') -> where("productId='%d'",$shopItem[$i][productid])->select();
-					for($j=0;$j<count($productSale);++$j){
-						$shopData[$i]['itemSales'] += $productSale[$j][quantity];
+					for($i=0;$i<count($shopItem);++$i){
+						$shopData[$i]['enable'] = $shopItem[$i][enable];
+						$shopData[$i]['orderId'] = $shopItem[$i][orderid];
+						$shopData[$i]['orderUser'] = M('Users') -> where("userId='%d'",$shopItem[$i][userid]) ->getField('userName');
+						$shopData[$i]['orderPrice'] = $shopItem[$i][orderprice];
+						$shopData[$i]['orderTime'] = $shopItem[$i][timestamp];
+						$shopData[$i]['orderStatus'] = $shopItem[$i][status];
 					}
+				}else{
+					$this->redirect('/Admin/Dashboard/shopList');
 				}
 				$data['adminName'] = $rawData[adminnickname];
 				$this->assign('shopItem',$shopData);
 				$this->assign('data',$data);
 			}
 			else{
-				$shopItem = M('Products') -> select();
+				$shopItem = M('Orders') -> select();
 				$data['itemType'] = count($shopItem);
 
 				for($i=0;$i<count($shopItem);++$i){
 					$shopData[$i]['enable'] = $shopItem[$i][enable];
-					$shopData[$i]['itemName'] = $shopItem[$i][productname];
-					$shopData[$i]['itemIntro'] = $shopItem[$i][productintro];
-					$shopData[$i]['itemPrice'] = $shopItem[$i][productprice];
-					$shopData[$i]['itemStock'] = $shopItem[$i][productamount];
-					$shopData[$i]['itemShop'] = M('Shop')->where("shopId='%d'",$shopItem[$i][shopid])->getField('shopName');
-					$shopData[$i]['itemSales'] = 0;
+					$shopData[$i]['orderId'] = $shopItem[$i][orderid];
+					$shopData[$i]['orderUser'] = M('Users') -> where("userId='%d'",$shopItem[$i][userid]) ->getField('userName');
+					$shopData[$i]['orderPrice'] = $shopItem[$i][orderprice];
+					$shopData[$i]['orderTime'] = $shopItem[$i][timestamp];
+					$shopData[$i]['orderStatus'] = $shopItem[$i][status];
+					// $shopData[$i]['itemName'] = $shopItem[$i][productname];
+					// $shopData[$i]['itemIntro'] = $shopItem[$i][productintro];
+					// $shopData[$i]['itemPrice'] = $shopItem[$i][productprice];
+					// $shopData[$i]['itemStock'] = $shopItem[$i][productamount];
+					// $shopData[$i]['itemShop'] = M('Shop')->where("shopId='%d'",$shopItem[$i][shopid])->getField('shopName');
+					// $shopData[$i]['itemSales'] = 0;
 
-					$productSale = M('Orderitems') -> where("productId='%d'",$shopItem[$i][productid])->select();
-					for($j=0;$j<count($productSale);++$j){
-						$shopData[$i]['itemSales'] += $productSale[$j][quantity];
-					}
+					// $productSale = M('Orderitems') -> where("productId='%d'",$shopItem[$i][productid])->select();
+					// for($j=0;$j<count($productSale);++$j){
+					// 	$shopData[$i]['itemSales'] += $productSale[$j][quantity];
+					// }
 				}
 				$data['adminName'] = $rawData[adminnickname];
 				$this->assign('shopItem',$shopData);
