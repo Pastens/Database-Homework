@@ -188,7 +188,6 @@
                     <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
-                                <th class="no-sort">订单状态</th>
                                 <th>订单号</th>
                                 <th>订单用户</th>
                                 <th>订单总额</th>
@@ -198,15 +197,6 @@
                         </thead>
                         <tbody>
                             <?php if(is_array($shopItem)): $i = 0; $__LIST__ = $shopItem;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shopItem): $mod = ($i % 2 );++$i;?><tr>
-                                    <td class="collapsing selectable" data-sort-value="<?php echo ($shopItem["enable"]); ?>">
-                                        <div class="ui fitted slider checkbox">
-                                            <!-- <?php echo ($shopItem["enable?checked:''"]); ?> -->
-                                            <?php if($shopItem["enable"] == '1'): ?><input type="checkbox" checked disabled>
-                                                <?php else: ?>
-                                                <input type="checkbox" disabled><?php endif; ?>
-                                            <label></label>
-                                        </div>
-                                    </td>
                                     <td class="selectable" data-sort-value="<?php echo ($shopItem["orderId"]); ?>"><a href="#"><?php echo ($shopItem["orderId"]); ?></a></td>
                                     <td class="selectable" data-sort-value="<?php echo ($shopItem["orderUser"]); ?>"><a href="#"><?php echo ($shopItem["orderUser"]); ?></a></td>
                                     <td data-sort-value="<?php echo ($shopItem["orderPrice"]); ?>"><?php echo ($shopItem["orderPrice"]); ?></td>
@@ -216,7 +206,6 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th></th>
                                 <th></th>
                                 <th></th>
                                 <th></th>

@@ -241,17 +241,6 @@ class DashboardController extends Controller {
 					$shopData[$i]['orderPrice'] = $shopItem[$i][orderprice];
 					$shopData[$i]['orderTime'] = $shopItem[$i][timestamp];
 					$shopData[$i]['orderStatus'] = $shopItem[$i][status];
-					// $shopData[$i]['itemName'] = $shopItem[$i][productname];
-					// $shopData[$i]['itemIntro'] = $shopItem[$i][productintro];
-					// $shopData[$i]['itemPrice'] = $shopItem[$i][productprice];
-					// $shopData[$i]['itemStock'] = $shopItem[$i][productamount];
-					// $shopData[$i]['itemShop'] = M('Shop')->where("shopId='%d'",$shopItem[$i][shopid])->getField('shopName');
-					// $shopData[$i]['itemSales'] = 0;
-
-					// $productSale = M('Orderitems') -> where("productId='%d'",$shopItem[$i][productid])->select();
-					// for($j=0;$j<count($productSale);++$j){
-					// 	$shopData[$i]['itemSales'] += $productSale[$j][quantity];
-					// }
 				}
 				$data['adminName'] = $rawData[adminnickname];
 				$this->assign('shopItem',$shopData);
@@ -264,15 +253,143 @@ class DashboardController extends Controller {
 	}
 
 	public function userManage(){
-		$this->display();
+		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
+		if($condition){
+			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
+			$data['adminSuperior'] = $rawData[superior];
+			//Check superior
+			if($data['adminSuperior'] == '3' || $data['adminSuperior'] == '4' || $data['adminSuperior'] == '6'){
+				$this->error('您没有访问该部分的权限');
+			}
+			else{
+				$userInfo = M('Users') -> select();
+				$data['userCount'] = count($userInfo);
+
+				for($i=0;$i<count($userInfo);++$i){
+					$detail = M('Userinfo') -> where("userId='%d'",$userInfo[$i][userid]) -> find();
+
+					$Info[$i]['userId'] = $userInfo[$i][userid];
+					$Info[$i]['userName'] = $userInfo[$i][username];
+					$Info[$i]['userStatus'] = $userInfo[$i][enable] ? "正常" : "被禁止";
+
+					if($detail){
+						$Info[$i]['nickName'] = $detail[nickname];
+						$Info[$i]['name'] = $detail[name];
+						$Info[$i]['userGender'] = $detail[gender];
+						$Info[$i]['userAddress'] = $detail[address];
+					}else{
+						$Info[$i]['nickName'] = "空";
+						$Info[$i]['name'] = "空";
+						$Info[$i]['userGender'] = "空";
+						$Info[$i]['userAddress'] = "空";
+					}
+				}
+				$data['adminName'] = $rawData[adminnickname];
+				$this->assign('userInfo',$Info);
+				$this->assign('data',$data);
+			}
+			$this->display();
+        }else{
+        	$this->redirect('/Admin/Login');
+        }
 	}
 
 	public function adminManage(){
-		$this->display();
+		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
+		if($condition){
+			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
+			$data['adminSuperior'] = $rawData[superior];
+			//Check superior
+			if($data['adminSuperior'] == '3' || $data['adminSuperior'] == '4' || $data['adminSuperior'] == '6'){
+				$this->error('您没有访问该部分的权限');
+			}
+			else{
+				$adminInfo = M('Admin') -> select();
+				$data['adminCount'] = count($adminInfo);
+
+				for($i=0;$i<count($adminInfo);++$i){
+					$Info[$i]['adminId'] = $adminInfo[$i][adminid];
+					$Info[$i]['adminName'] = $adminInfo[$i][adminname];
+					$Info[$i]['adminStatus'] = $adminInfo[$i][enable] ? "正常" : "被禁止";
+
+					$Info[$i]['adminSuper'] = $adminInfo[$i][superior];
+
+					switch ($adminInfo[$i][superior]) {
+						case '0':
+							$Info[$i]['adminSuperior'] = "系统开发人员";
+							break;
+						
+						case '1':
+							$Info[$i]['adminSuperior'] = "系统管理员";
+							break;
+
+						case '2':
+							$Info[$i]['adminSuperior'] = "商店管理员";
+							break;
+
+						case '3':
+							$Info[$i]['adminSuperior'] = "订单管理员";
+							break;
+
+						case '4':
+							$Info[$i]['adminSuperior'] = "用户管理员";
+							break;
+
+						case '5':
+							$Info[$i]['adminSuperior'] = "加盟客户";
+							break;
+					}
+					$Info[$i]['adminNickname'] = $adminInfo[$i][adminnickname];
+					$Info[$i]['adminLog'] = $adminInfo[$i][admincount];
+				}
+				$data['adminName'] = $rawData[adminnickname];
+				$this->assign('adminInfo',$Info);
+				$this->assign('data',$data);
+			}
+			$this->display();
+        }else{
+        	$this->redirect('/Admin/Login');
+        }
 	}
 
 	public function systemLog(){
-		$this->display();
+		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
+		if($condition){
+			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
+			$data['adminSuperior'] = $rawData[superior];
+			//Check superior
+			if($data['adminSuperior'] == '0' || $data['adminSuperior'] == '1'){
+				$logInfo = M('Systemlog') -> select();
+				$data['logCount'] = count($logInfo);
+
+				for($i=0;$i<count($logInfo);++$i){
+					$Info[$i]['logId'] = $logInfo[$i][logid];
+					$Info[$i]['logName'] = $logInfo[$i][operationname];
+					switch ($logInfo[$i][operationusertype]) {
+						case '0':
+							$Info[$i]['logUser'] = M('Admin') -> where("adminId='%d'",$logInfo[$i][operationuserid])->getField('adminNickname');
+							$Info[$i]['logUserType'] = "管理员";
+							break;
+						
+						case '1':
+							$Info[$i]['logUser'] = M('Users') -> where("userId='%d'",$logInfo[$i][operationuserid])->getField('userName');
+							$Info[$i]['logUserType'] = "用户";
+							break;
+						
+					}
+					$Info[$i]['logTime'] = date('Y-m-d H:i:s',$logInfo[$i][timestamp]);
+				}
+				$data['adminName'] = $rawData[adminnickname];
+				$this->assign('logInfo',$Info);
+				$this->assign('data',$data);
+			}
+			else{
+				$this->error('您没有访问该部分的权限');
+			}
+			$this->display();
+        }else{
+        	$this->redirect('/Admin/Login');
+        }
 	}
 
 	public function apiList(){

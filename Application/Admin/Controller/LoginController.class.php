@@ -38,6 +38,13 @@ class LoginController extends Controller {
 				}
 				$data['status'] = 1;
 				$data['info']   = '登录成功';
+
+				$log['operationName'] = "登录";
+				$log['operationUserId'] = $cid;
+				$log['operationUserType'] = 0;
+				$log['timestamp'] = time();
+
+				M('Systemlog') -> data($log) -> add();
 			}else{
 				$data['status'] = 0;
 

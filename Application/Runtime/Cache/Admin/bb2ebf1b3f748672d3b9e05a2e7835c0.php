@@ -180,40 +180,36 @@
                         <i class="right chevron icon divider"></i>
                         <div class="section">商店管理</div>
                         <i class="right arrow icon divider"></i>
-                        <div class="active section">订单管理</div>
+                        <div class="active section">会员管理</div>
                     </div>
                 </div>
                 <div class="ui segment">
-                    <h4>订单列表</h4>
+                    <h4>会员列表</h4>
                     <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
-                                <th class="no-sort"></th>
-                                <th>商品名</th>
-                                <th>商品介绍</th>
-                                <th>商铺</th>
-                                <th>定价</th>
-                                <th>库存量</th>
-                                <th>销售量</th>
+                                <th>用户ID</th>
+                                <th>用户名</th>
+                                <th>昵称</th>
+                                <th>真实姓名</th>
+                                <th>性别</th>
+                                <th>地址</th>
+                                <th>用户状态</th>
+                                <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if(is_array($shopItem)): $i = 0; $__LIST__ = $shopItem;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$shopItem): $mod = ($i % 2 );++$i;?><tr>
-                                    <td class="collapsing selectable" data-sort-value="<?php echo ($shopItem["enable"]); ?>">
-                                        <div class="ui fitted slider checkbox">
-                                            <!-- <?php echo ($shopItem["enable?checked:''"]); ?> -->
-                                            <?php if($shopItem["enable"] == '1'): ?><input type="checkbox" checked disabled>
-                                                <?php else: ?>
-                                                <input type="checkbox" disabled><?php endif; ?>
-                                            <label></label>
-                                        </div>
-                                    </td>
-                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemName"]); ?>"><a href="#"><?php echo ($shopItem["itemName"]); ?></a></td>
-                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemIntro"]); ?>"><a href="#"><?php echo ($shopItem["itemIntro"]); ?></a></td>
-                                    <td data-sort-value="<?php echo ($shopItem["itemShop"]); ?>" data-sort-value="<?php echo ($shopItem["itemName"]); ?>"><?php echo ($shopItem["itemShop"]); ?></td>
-                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemPrice"]); ?>"><a href="#"><?php echo ($shopItem["itemPrice"]); ?></a></td>
-                                    <td class="selectable" data-sort-value="<?php echo ($shopItem["itemStock"]); ?>"><a href="#"><?php echo ($shopItem["itemStock"]); ?></a></td>
-                                    <td data-sort-value="<?php echo ($shopItem["itemSales"]); ?>"><?php echo ($shopItem["itemSales"]); ?></td>
+                            <?php if(is_array($userInfo)): $i = 0; $__LIST__ = $userInfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$userInfo): $mod = ($i % 2 );++$i;?><tr>
+                                    <td class="selectable" data-sort-value="<?php echo ($userInfo["userId"]); ?>"><a href="#"><?php echo ($userInfo["userId"]); ?></a></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($userInfo["userName"]); ?>"><a href="#"><?php echo ($userInfo["userName"]); ?></a></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($userInfo["nickName"]); ?>"><?php echo ($userInfo["nickName"]); ?></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($userInfo["name"]); ?>"><a href="#"><?php echo ($userInfo["name"]); ?></a></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($userInfo["userGender"]); ?>"><a href="#"><?php echo ($userInfo["userGender"]); ?></a></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($userInfo["userAddress"]); ?>"><?php echo ($userInfo["userAddress"]); ?></td>
+                                    <td class="selectable" data-sort-value="<?php echo ($userInfo["userStatus"]); ?>"><?php echo ($userInfo["userStatus"]); ?></td>
+                                    <?php if($userInfo["userStatus"] == '正常'): ?><td data-value="<?php echo ($userInfo["userId"]); ?>" data-sort-value="<?php echo ($userInfo["userStatus"]); ?>"><div class="ui tiny red button">禁止用户</div></td>
+                                    <?php else: ?>
+                                        <td data-value="<?php echo ($userInfo["userId"]); ?>" data-sort-value="<?php echo ($userInfo["userStatus"]); ?>"><div class="ui tiny green button">解禁用户</div></td><?php endif; ?>
                                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
                         </tbody>
                         <tfoot>
@@ -224,49 +220,13 @@
                                 <th></th>
                                 <th></th>
                                 <th></th>
-                                <th>共<?php echo ($data["itemType"]); ?>种</th>
+                                <th></th>
+                                <th>共<?php echo ($data["userCount"]); ?>名会员</th>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="ui small modal">
-        <i class="close icon"></i>
-        <div class="header">
-            修改商品信息
-        </div>
-        <div class="content center aligned ">
-            <div class="ui form">
-                <div class="field">
-                    <label>商品名</label>
-                    <input rows="1" name="itemName" id="itemName">
-                </div>
-                <div class="field">
-                    <label>商品介绍</label>
-                    <input rows="4" name="itemIntro" id="itemIntro">
-                </div>
-                <div class="field">
-                    <label>销售价</label>
-                    <input rows="1" name="itemPrice" id="itemPrice">
-                </div>
-                <div class="field">
-                    <label>库存量</label>
-                    <input rows="1" name="itemStock" id="itemStock">
-                </div>
-                <div class="field">
-                    <div class="ui toggle checkbox">
-                        <label>销售状态</label>
-                        <input type="checkbox" name="itemStatus" id="itemStatus">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="actions">
-            <div class="ui left floated red button">删除商品</div>
-            <div class="ui button">取消</div>
-            <div class="ui green button">提交</div>
         </div>
     </div>
     <div class="ui inverted vertical footer segment">

@@ -192,43 +192,38 @@
                         <i class="right chevron icon divider"></i>
                         <div class="section">商店管理</div>
                         <i class="right arrow icon divider"></i>
-                        <div class="active section">订单管理</div>
+                        <div class="active section">管理员管理</div>
                     </div>
                 </div>
                 <div class="ui segment">
-                    <h4>订单列表</h4>
+                    <h4>管理员列表</h4>
                     <table class="ui sortable center aligned fixed table">
                         <thead>
                             <tr>
-                                <th class="no-sort"></th>
-                                <th>商品名</th>
-                                <th>商品介绍</th>
-                                <th>商铺</th>
-                                <th>定价</th>
-                                <th>库存量</th>
-                                <th>销售量</th>
+                                <th>管理员ID</th>
+                                <th>系统角色</th>
+                                <th>用户名</th>
+                                <th>昵称</th>
+                                <th>登录次数</th>
+                                <th>用户状态</th>
+                                <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <volist name="shopItem" id="shopItem">
+                            <volist name="adminInfo" id="adminInfo">
                                 <tr>
-                                    <td class="collapsing selectable" data-sort-value="{$shopItem.enable}">
-                                        <div class="ui fitted slider checkbox">
-                                            <!-- {$shopItem.enable?checked:''} -->
-                                            <if condition="$shopItem.enable eq '1'">
-                                                <input type="checkbox" checked disabled>
-                                                <else />
-                                                <input type="checkbox" disabled>
-                                            </if>
-                                            <label></label>
-                                        </div>
-                                    </td>
-                                    <td class="selectable" data-sort-value="{$shopItem.itemName}"><a href="#">{$shopItem.itemName}</a></td>
-                                    <td class="selectable" data-sort-value="{$shopItem.itemIntro}"><a href="#">{$shopItem.itemIntro}</a></td>
-                                    <td data-sort-value="{$shopItem.itemShop}" data-sort-value="{$shopItem.itemName}">{$shopItem.itemShop}</td>
-                                    <td class="selectable" data-sort-value="{$shopItem.itemPrice}"><a href="#">{$shopItem.itemPrice}</a></td>
-                                    <td class="selectable" data-sort-value="{$shopItem.itemStock}"><a href="#">{$shopItem.itemStock}</a></td>
-                                    <td data-sort-value="{$shopItem.itemSales}">{$shopItem.itemSales}</td>
+                                    <td class="selectable" data-sort-value="{$adminInfo.adminId}"><a href="#">{$adminInfo.adminId}</a></td>
+                                    <td class="selectable" data-sort-value="{$adminInfo.adminSuper}"><a href="#">{$adminInfo.adminSuperior}</a></td>
+                                    <td class="selectable" data-sort-value="{$adminInfo.adminName}"><a href="#">{$adminInfo.adminName}</a></td>
+                                    <td class="selectable" data-sort-value="{$adminInfo.adminNickname}"><a href="#">{$adminInfo.adminNickname}</a></td>
+                                    <td class="selectable" data-sort-value="{$adminInfo.adminLog}"><a href="#">{$adminInfo.adminLog}</a></td>
+                                    <td class="selectable" data-sort-value="{$adminInfo.adminStatus}"><a href="#">{$adminInfo.adminStatus}</a></td>
+                                    
+                                    <if condition="$adminInfo.adminStatus eq '正常'">
+                                        <td data-value="{$adminInfo.adminId}" data-sort-value="{$adminInfo.adminStatus}"><div class="ui tiny red button">禁止管理员</div></td>
+                                    <else />
+                                        <td data-value="{$adminInfo.adminId}" data-sort-value="{$adminInfo.adminStatus}"><div class="ui tiny green button">解禁管理员</div></td>
+                                    </if>
                                 </tr>
                             </volist>
                         </tbody>
@@ -240,49 +235,12 @@
                                 <th></th>
                                 <th></th>
                                 <th></th>
-                                <th>共{$data.itemType}种</th>
+                                <th>共{$data.adminCount}名管理员</th>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="ui small modal">
-        <i class="close icon"></i>
-        <div class="header">
-            修改商品信息
-        </div>
-        <div class="content center aligned ">
-            <div class="ui form">
-                <div class="field">
-                    <label>商品名</label>
-                    <input rows="1" name="itemName" id="itemName">
-                </div>
-                <div class="field">
-                    <label>商品介绍</label>
-                    <input rows="4" name="itemIntro" id="itemIntro">
-                </div>
-                <div class="field">
-                    <label>销售价</label>
-                    <input rows="1" name="itemPrice" id="itemPrice">
-                </div>
-                <div class="field">
-                    <label>库存量</label>
-                    <input rows="1" name="itemStock" id="itemStock">
-                </div>
-                <div class="field">
-                    <div class="ui toggle checkbox">
-                        <label>销售状态</label>
-                        <input type="checkbox" name="itemStatus" id="itemStatus">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="actions">
-            <div class="ui left floated red button">删除商品</div>
-            <div class="ui button">取消</div>
-            <div class="ui green button">提交</div>
         </div>
     </div>
     <div class="ui inverted vertical footer segment">
