@@ -7,7 +7,7 @@ class IndexController extends Controller {
         if($condition){
         	$this->redirect('/Admin/Dashboard');
         }else{
-        	$this->redirect('/Admin/Login');
+        	$this->redirect('/Admin/Dashboard');
         }
     }
 }

@@ -2,15 +2,6 @@
 namespace Admin\Controller;
 use Think\Controller;
 class LoginController extends Controller {
-	public function index(){
-		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
-        if($condition){
-        	$this->redirect('/Admin/Dashboard');
-        }else{
-        	$this->display();
-        }
-	}
-
 	public function loginAdmin(){
 		if(IS_POST){
 			$adminName = I('post.adminName');
@@ -39,7 +30,7 @@ class LoginController extends Controller {
 				$data['status'] = 1;
 				$data['info']   = '登录成功';
 
-				$log['operationName'] = "登录";
+				$log['operationName'] = "管理员登录";
 				$log['operationUserId'] = $cid;
 				$log['operationUserType'] = 0;
 				$log['timestamp'] = time();

@@ -16,7 +16,16 @@ class DashboardController extends Controller {
 			$this->assign('data',$data);
 			$this->display();
         }else{
-        	$this->redirect('/Admin/Login');
+        	$this->redirect('/Admin/Dashboard/Login');
+        }
+	}
+
+	public function login(){
+		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
+        if($condition){
+        	$this->redirect('/Admin/Dashboard/');
+        }else{
+        	$this->display();
         }
 	}
 

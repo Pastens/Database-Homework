@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>会员登录 —— Eshop</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/semantic/semantic/dist/semantic.min.css">
+    <style>
+    body {
+        background-color: #ffffff;
+    }
+    
+    body > .grid {
+        height: 100%;
+    }
+    
+    .image {
+        margin-top: -100px;
+    }
+    
+    .column {
+        max-width: 450px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <h2 class="ui teal image header">
+                <img src="__PUBLIC__/Static/assets/images/logo.png" class="image">
+                <div class="content">
+                    会员登录
+                </div>
+            </h2>
+            <div class="ui large form">
+                <div class="ui piled segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="userName" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="userPassword" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="field" style="text-align: right">
+                        <div class="ui slider checkbox">
+                            <input type="checkbox" name="userAutologin">
+                            <label>自动登录</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="ui fluid large teal submit button">登录</button>
+                    <div class="ui error message"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="__PUBLIC__/Static/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Static/semantic/semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Static/jquery.md5.min.js"></script>
+    <script>
+    jQuery(document).ready(function($) {
+        $('.ui.large.form').form({
+            on: 'blur',
+            fields: {
+                userName: {
+                    identifier: 'userName',
+                    rules: [{
+                        type: 'empty',
+                        prompt: '请输入用户名'
+                    }]
+                },
+                userPassword: {
+                    identifier: 'userPassword',
+                    rules: [{
+                        type: 'empty',
+                        prompt: '请输入密码'
+                    }]
+                }
+            }
+        }).submit( function (e) {
+            e.preventDefault();
+        });
+
+        $('.ui.large.form').on('click',  function(event) {
+            $(this).removeClass('error');
+        });
+
+        $('.ui.large.form .submit').click(function(){
+            var $form = $('.ui.large.form'),
+                userName = $form.form('get value','userName'),
+                userPassword = $form.form('get value','userPassword'),
+                userAutologin = $form.form('get value','userAutologin');
+            if((userName&&userPassword)== ''){
+                return false;
+            }else{
+                $.ajax({
+                    url: '{:U("Home/User/loginUser")}',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        userName: userName,
+                        userPassword: $.md5(userPassword),
+                        userAutologin: userAutologin
+                    },
+                    success: function(data){
+                        if(data.status == 1){
+                            location.href = "{:U('Home/Index/index')}";
+                        }else if(data.status == 0){
+                            var message = "<p>"+data.info+"</p>";
+                            $('.ui.error.message').html(message);
+                            $('.ui.large.form').addClass('error');
+                        }
+                    }
+                })
+                .done(function() {
+                    console.log("success");
+                })
+                .fail(function() {
+                    console.log("error");
+                })
+                .always(function() {
+                    console.log("complete");
+                });
+                
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
