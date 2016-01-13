@@ -3,6 +3,14 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-        $this->show();
+        $this->display();
+    }
+
+    public function login(){
+    	$this->display();
+    }
+
+    public function signup(){
+    	$this->display();
     }
 }

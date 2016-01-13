@@ -12,6 +12,7 @@
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.tablesort.js"></script>
     <script type="text/javascript" src="__PUBLIC__/Static/semantic/semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Static/bubbler.jquery.js"></script>
     <style type="text/css">
     .hidden.menu {
         display: none;
@@ -27,16 +28,17 @@
     }
     
     .masthead .ui.menu .ui.button {
+        z-index: 999;
         margin-left: 0.5em;
     }
     
     .masthead h2.ui.header {
-        margin-top:4em;
+        margin-top: 4em;
         margin-bottom: 0em;
         font-size: 3em;
         font-weight: normal;
+        z-index: 999;
     }
-    
     
     .ui.vertical.stripe {
         padding: 8em 0em;
@@ -80,6 +82,28 @@
         display: none;
     }
     
+    #bubbles {
+        display: block;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: #000;
+    }
+    
+    #bubbles.block {
+        z-index: -1;
+        width: 100%;
+        height: 320px;
+        position: absolute;
+        top: 50%;
+        margin-top: -160px;
+    }
+
+    #bubbles bubble{
+    	z-index: -1;
+    	opacity: 1;
+    }
+    
     @media only screen and (max-width: 700px) {
         .ui.fixed.menu {
             display: none !important;
@@ -110,9 +134,9 @@
     <!-- Following Menu -->
     <div class="ui large top fixed hidden menu">
         <div class="ui container">
-            <a class="active item">首页</a>
-            <a class="item">商品列表</a>
-            <a class="item">商店列表</a>
+            <a href="{:U('Home/Index/Index')}" class="active item">首页</a>
+            <a href="{:U('Home/Index/ItemList')}" class="item">商品列表</a>
+            <a href="{:U('Home/Index/ShopList')}" class="item">商店列表</a>
             <div class="right menu">
                 <div class="item">
                     <a href="{:U('Home/Index/Login')}" class="ui button">登录</a>
@@ -125,51 +149,51 @@
     </div>
     <!-- Sidebar Menu -->
     <div class="ui vertical inverted sidebar menu">
-        <a class="active item">首页</a>
-        <a class="item">商品列表</a>
-        <a class="item">商店列表</a>
+        <a href="{:U('Home/Index/Index')}" class="active item">首页</a>
+        <a href="{:U('Home/Index/ItemList')}" class="item">商品列表</a>
+        <a href="{:U('Home/Index/ShopList')}" class="item">商店列表</a>
         <a href="{:U('Home/Index/Login')}" class="item">登录</a>
         <a href="{:U('Admin/Index/Signup')}" class="item">注册</a>
     </div>
     <!-- Page Contents -->
     <div class="pusher">
-        <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui inverted vertical masthead center aligned segment" id="bubbles">
             <div class="ui container">
                 <div class="ui large secondary inverted pointing menu">
                     <a class="toc item">
                         <i class="sidebar icon"></i>
                     </a>
-                    <a class="active item">首页</a>
-                    <a class="item">商品列表</a>
-                    <a class="item">商店列表</a>
+                    <a href="{:U('Home/Index/Index')}" class="active item">首页</a>
+                    <a href="{:U('Home/Index/ItemList')}" class="item">商品列表</a>
+                    <a href="{:U('Home/Index/ShopList')}" class="item">商店列表</a>
                     <div class="right item">
                         <a href="{:U('Home/Index/Login')}" class="ui inverted button">登录</a>
-                        <a href="{:U('Admin/Index/Signup')}" class="ui inverted button">注册</a>
+                        <a href="{:U('Home/Index/Signup')}" class="ui inverted button">注册</a>
                     </div>
                 </div>
             </div>
             <div class="ui text container">
                 <h2 class="ui inverted header">欢迎来到Eshop</h2>
                 <h3>Eshop是一个基于Thinkphp框架搭建，遵循Apache2开源协议的商城基础架构</h3>
-                <a class="ui huge primary button" href="#content">开始体验 <i class="right arrow icon"></i></a>
+                <a class="ui huge primary button" href="{:U('Home/Index/Login')}">开始体验 <i class="right arrow icon"></i></a>
             </div>
         </div>
         <div class="ui vertical stripe segment" id="content">
             <div class="ui middle aligned stackable grid container">
                 <div class="row">
                     <div class="eight wide column">
-                        <h3 class="ui header">We Help Companies and Companions</h3>
-                        <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-                        <h3 class="ui header">We Make Bananas That Can Dance</h3>
-                        <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+                        <h3 class="ui header">我们拥有完备的后台权限管理系统</h3>
+                        <p>按照权限等级的不同，将管理员划分为 系统开发人员、系统管理员、商店管理员、订单管理员、用户管理员以及加盟客户 六大类，拥有不同的后台管理权限</p>
+                        <h3 class="ui header">我们具有合理的商店与商品管理系统</h3>
+                        <p>商店的创建、管理，商品的上架、下架，订单的状态更新，一应俱全</p>
                     </div>
                     <div class="six wide right floated column">
-                        <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+                        <img src="__PUBLIC__/Static/assets/images/index_img.png" class="ui large image">
                     </div>
                 </div>
                 <div class="row">
                     <div class="center aligned column">
-                        <a class="ui huge button">Check Them Out</a>
+                        <a href="{:U('Admin/Index/Index')}" class="ui huge button">查看后台</a>
                     </div>
                 </div>
             </div>
@@ -178,55 +202,46 @@
             <div class="ui equal width stackable internally celled grid">
                 <div class="center aligned row">
                     <div class="column">
-                        <h3>"What a Company"</h3>
-                        <p>That is what they all say about us</p>
+                        <h4>基于ThinkPHP框架和Semantic-UI开发</h4>
+                        <p>功能齐全，分布合理</p>
                     </div>
                     <div class="column">
-                        <h3>"I shouldn't have gone with their competitor."</h3>
-                        <p>
-                            <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
-                        </p>
+                        <h4>自建数据库与数据模型</h4>
+                        <p>MVC架构，Ajax数据交互</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="ui vertical stripe segment">
             <div class="ui text container">
-                <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
-                <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-                <a class="ui large button">Read More</a>
+                <h3 class="ui header">简单的二次扩展</h3>
+				<p>完备的API接口，预留二次开发的空间</p>
                 <h4 class="ui horizontal header divider">
-        <a href="#">Case Studies</a>
-      </h4>
-                <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
-                <p>Yes I know you probably disregarded the earlier boasts as non-sequitor filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
-                <a class="ui large button">I'm Still Quite Interested</a>
+        			<a href="{:U('Admin/Index/Index')}">登录后台查看API列表</a>
+      			</h4>
             </div>
         </div>
         <div class="ui inverted vertical footer segment">
             <div class="ui container">
-                <div class="ui stackable inverted divided equal height stackable grid">
+                <div class="ui right aligned stackable inverted divided equal height stackable grid">
+                    <div class="ten wide column">
+                        <h4 class="ui inverted header">Eshop</h4>
+                        <p>一个基础在线商城系统</p>
+                    </div>
                     <div class="three wide column">
-                        <h4 class="ui inverted header">About</h4>
+                        <h4 class="ui inverted header">网站地图</h4>
                         <div class="ui inverted link list">
-                            <a href="#" class="item">Sitemap</a>
-                            <a href="#" class="item">Contact Us</a>
-                            <a href="#" class="item">Religious Ceremonies</a>
-                            <a href="#" class="item">Gazebo Plans</a>
+                            <a href="#" class="item">首页</a>
+                            <a href="#" class="item">商品列表</a>
+                            <a href="#" class="item">商店列表</a>
+                            <a href="#" class="item">用户中心</a>
                         </div>
                     </div>
                     <div class="three wide column">
-                        <h4 class="ui inverted header">Services</h4>
+                        <h4 class="ui inverted header">管理后台</h4>
                         <div class="ui inverted link list">
-                            <a href="#" class="item">Banana Pre-Order</a>
-                            <a href="#" class="item">DNA FAQ</a>
-                            <a href="#" class="item">How To Access</a>
-                            <a href="#" class="item">Favorite X-Men</a>
+                            <a href="#" class="item">后台登录</a>
                         </div>
-                    </div>
-                    <div class="seven wide column">
-                        <h4 class="ui inverted header">Footer Header</h4>
-                        <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
                     </div>
                 </div>
             </div>
@@ -251,6 +266,39 @@
             // create sidebar and attach to menu open
             $('.ui.sidebar')
                 .sidebar('attach events', '.toc.item');
+
+            var visible = true;
+
+            $("#update").click(function(e) {
+                e.preventDefault();
+                $("#bubbles").remove();
+                $("body").prepend('<div id="bubbles"/>');
+
+                if (!$("#fullscreen").is(':checked')) {
+                    $("#bubbles").addClass("block");
+                }
+
+                $("#bubbles").bubbler({
+                    color: $("#color").val(),
+                    ammount: $("#ammount").val(),
+                    min: $("#min").val(),
+                    max: $("#max").val(),
+                    time: $("#time").val(),
+                    vertical: $("#vertical").is(':checked'),
+                    horizontal: $("#horizontal").is(':checked')
+                });
+
+
+            });
+
+            $("#bubbles").bubbler();
+
+            setTimeout(function() {
+                $("#demoform").animate({
+                    left: -240
+                }, 200);
+                visible = false;
+            }, 1000);
 
         });
     </script>
