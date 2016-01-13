@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <!-- Site Properties -->
-    <title>商店列表 - Eshop</title>
+    <title>用户中心 - Eshop</title>
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/semantic/semantic/dist/semantic.min.css">
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.tablesort.js"></script>
@@ -101,8 +101,8 @@
         opacity: 1;
     }
     
-    .ui.three.wide.column .ui.inverted.segment {
-        padding: 20px 30px;
+    .ui.four.wide.column .ui.inverted.segment {
+        padding: 20px 40px;
     }
     
     @media only screen and (max-width: 700px) {
@@ -134,7 +134,7 @@
         <div class="ui container">
             <a href="{:U('Home/Index/Index')}" class="item">首页</a>
             <a href="{:U('Home/Index/ItemList')}" class="item">商品列表</a>
-            <a href="{:U('Home/Index/ShopList')}" class="active item">商店列表</a>
+            <a href="{:U('Home/Index/ShopList')}" class="item">商店列表</a>
             <div class="right menu">
                 <div class="item">
                     <if condition="$data eq null">
@@ -163,7 +163,7 @@
     <div class="ui vertical inverted sidebar menu">
         <a href="{:U('Home/Index/Index')}" class="item">首页</a>
         <a href="{:U('Home/Index/ItemList')}" class="item">商品列表</a>
-        <a href="{:U('Home/Index/ShopList')}" class="active item">商店列表</a>
+        <a href="{:U('Home/Index/ShopList')}" class="item">商店列表</a>
         <if condition="$data eq null">
             <a href="{:U('Home/Index/Login')}" class="item">登录</a>
             <a href="{:U('Home/Index/Signup')}" class="item">注册</a>
@@ -183,7 +183,7 @@
                     </a>
                     <a href="{:U('Home/Index/Index')}" class="item">首页</a>
                     <a href="{:U('Home/Index/ItemList')}" class="item">商品列表</a>
-                    <a href="{:U('Home/Index/ShopList')}" class="active item">商店列表</a>
+                    <a href="{:U('Home/Index/ShopList')}" class="item">商店列表</a>
                     <div class="right item">
                         <if condition="$data eq null">
                             <a href="{:U('Home/Index/Login')}" class="ui inverted button">登录</a>
@@ -205,39 +205,76 @@
         </div>
         <div class="ui vertical stripe segment">
             <div class="ui grid container">
-                <div class="ui thirteen wide column items">
-                    <div class="ui link cards">
-                        <volist name="item" id="item">
-                            <div class="card">
-                                <div class="content">
-                                    <div class="header">{$item.shopName}</div>
-                                    <div class="meta">
-                                        <a>{$item.shopOwner}</a>
-                                    </div>
-                                </div>
-                                <div class="extra content">
-                                    <span class="right floated">拥有 {$item.shopProducts} 件商品</span>
-                                    <span>销售额 <i class="yen icon"></i>{$item.shopProfits}</span>
-                                </div>
+                <div class="ui four wide column">
+                    <div class="ui vertical pointing menu">
+                        <div class="item">
+                            <div class="header">个人中心</div>
+                            <div class="menu">
+                                <a href="{:U('Home/User/Index')}" class="item">首页</a>
                             </div>
-                        </volist>
+                        </div>
+                        <div class="item">
+                            <div class="header">个人资料</div>
+                            <div class="menu">
+                                <a href="{:U('Home/User/Userinfo')}" class="item">查看个人资料</a>
+                                <a href="{:U('Home/User/Modify')}" class="active item">修改个人资料</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="header">订单消息</div>
+                            <div class="menu">
+                                <a href="{:U('Home/User/Myorders')}" class="item">查看订单</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="header">安全设置</div>
+                            <div class="menu">
+                                <a href="{:U('Home/User/Resetpassword')}" class="item">修改密码</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="ui three wide column">
-                    <div class="ui inverted segment">
-                        <div class="ui horizontal small statistics">
-                            <div class="ui red inverted statistic">
-                                <div class="value">
-                                    {$statistic.itemType}
-                                </div>
-                                <div class="label">商品种类</div>
+                <div class="ui twelve wide column">
+                    <div class="ui fluid centered card">
+                        <div class="content">
+                            <div class="header">
+                                修改个人资料
                             </div>
-                            <div class="ui violet inverted statistic">
-                                <div class="value">
-                                    {$statistic.shopNum}
+                        </div>
+                        <div class="content">
+                            <h4 class="ui header">个人资料</h4>
+                            <div class="ui form">
+                                <div class="field">
+                                    <label>昵称</label>
+                                    <input type="text" id="nickName" name="nickName" placeholder="请输入昵称" value="{$data.nickName}">
                                 </div>
-                                <div class="label">商家</div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>真实姓名</label>
+                                        <input type="text" id="name" name="name" placeholder="请输入真实姓名" value="{$data.name}">
+                                    </div>
+                                    <div class="field">
+                                        <label>性别</label>
+                                        <select id="gender" name="gender" class="ui fluid dropdown">
+                                        <if condition="$data.gender eq 1">
+                                            <option value="0">女</option>
+                                            <option value="1" selected>男</option>
+                                        <else/>
+                                            <option value="0" selected>女</option>
+                                            <option value="1">男</option>
+                                        </if>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label>地址</label>
+                                    <input type="text" id="address" name="address" placeholder="请输入地址" value="{$data.address}">
+                                </div>
+                                <div class="ui error message"></div>
                             </div>
+                        </div>
+                        <div class="extra content">
+                            <a class="ui green button">提交修改</a>
                         </div>
                     </div>
                 </div>
@@ -322,6 +359,98 @@
                 visible = false;
             }, 1000);
 
+            $('.ui.form').form({
+                on: 'blur',
+                fields: {
+                    nickName: {
+                        identifier: 'userName',
+                        rules: [{
+                            type: 'empty',
+                            prompt: '请输入昵称'
+                        }]
+                    },
+                    name: {
+                        identifier: 'name',
+                        rules: [{
+                            type: 'empty',
+                            prompt: '请输入真实姓名'
+                        }]
+                    },
+                    address: {
+                        identifier: 'address',
+                        rules: [{
+                            type: 'empty',
+                            prompt: '请输入地址'
+                        }]
+                    }
+                }
+            }).submit(function(e) {
+                e.preventDefault();
+            });
+
+            $('.ui.form').on('click', function(event) {
+                $(this).removeClass('error');
+            });
+
+            $('.ui.green.button').on('click', function() {
+                var nickName = $("#nickName").val(),
+                    name = $("#name").val(),
+                    gender = $("#gender").val(),
+                    address = $("#address").val();
+
+                if((nickName || name || gender || address) == null || (nickName || name || gender || address) == "" ){
+                    return false;
+                }else{
+                    $.ajax({
+                        url: '{:U("Home/User/modifyUserinfo")}',
+                        type: 'POST',
+                        dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+                        data: {param1: 'value1'},
+                    })
+                    .done(function() {
+                        console.log("success");
+                    })
+                    .fail(function() {
+                        console.log("error");
+                    })
+                    .always(function() {
+                        console.log("complete");
+                    });
+                    
+                }
+
+                //     return false;
+                // } else {
+                //     $.ajax({
+                //             url: '{:U("Home/User/signupUser")}',
+                //             type: 'POST',
+                //             dataType: 'json',
+                //             data: {
+                //                 userName: userName,
+                //                 userPassword: $.md5(userPassword)
+                //             },
+                //             success: function(data) {
+                //                 if (data.status == 1) {
+                //                     location.href = "{:U('Home/User/index')}";
+                //                 } else if (data.status == 0) {
+                //                     var message = "<p>" + data.info + "</p>";
+                //                     $('.ui.error.message').html(message);
+                //                     $('.ui.large.form').addClass('error');
+                //                 }
+                //             }
+                //         })
+                //         .done(function() {
+                //             console.log("success");
+                //         })
+                //         .fail(function() {
+                //             console.log("error");
+                //         })
+                //         .always(function() {
+                //             console.log("complete");
+                //         });
+
+                // }
+            });
         });
     </script>
 </body>

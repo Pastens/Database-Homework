@@ -50,6 +50,7 @@
                     <button type="submit" class="ui fluid large teal submit button">注册</button>
                     <div class="ui error message"></div>
                 </div>
+                <a href="{:U('Home/Index/Login')}">已有账号？点击这里登录</a>
             </div>
         </div>
     </div>
@@ -101,7 +102,7 @@
                     },
                     success: function(data){
                         if(data.status == 1){
-                            location.href = "{:U('Home/Index/index')}";
+                            location.href = "{:U('Home/User/index')}";
                         }else if(data.status == 0){
                             var message = "<p>"+data.info+"</p>";
                             $('.ui.error.message').html(message);

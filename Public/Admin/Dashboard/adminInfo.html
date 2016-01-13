@@ -264,7 +264,7 @@
                     data: {adminName: userName},
                     success: function(data){
                         if(data.status == 1){
-                            var message = "<p>"+"修改成功"+"</p>";
+                            var message = "<p>"+"修改成功, 3秒后重新登录"+"</p>";
                             $('.ui.success.message').html(message);
                             $('.ui.form').addClass('success');
                             var t = setTimeout(function(){

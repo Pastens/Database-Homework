@@ -117,6 +117,13 @@ class UserController extends Controller {
 			}else{
 				M('Admin') -> where("adminId='%d'",$adminId) -> setField('adminNickname',$adminName);
 				$data['status'] = 1;
+
+				$log['operationName'] = "更改管理员用户名";
+				$log['operationUserId'] = $adminId;
+				$log['operationUserType'] = 0;
+				$log['timestamp'] = time();
+
+				M('Systemlog') -> data($log) -> add();
 			}
 			$this->ajaxReturn($data);
 		}
@@ -126,11 +133,27 @@ class UserController extends Controller {
 		if(!IS_POST){
 			$this->error('非法操作');
 		}else{
-			$adminPassword = I('post.adminPassword');
+			$adminPassword = I('post.oldPassword');
 			$adminId = cookie('cid');
+			$condition = array(
+				'adminId' => $adminId,
+				'adminPassword' => $adminPassword
+				);
+			$admin = M('Admin') -> where($condition) ->find();
+			if($admin){
+				$adminPassword = I('post.newPassword');
+				M('Admin') -> where("adminId='%d'",$adminId) -> setField('adminPassword',$adminPassword);
+				$data['status'] = 1;
+				$log['operationName'] = "重置管理员密码";
+				$log['operationUserId'] = $adminId;
+				$log['operationUserType'] = 0;
+				$log['timestamp'] = time();
 
-			M('Admin') -> where("adminId='%d'",$adminId) -> setField('adminPassword',$adminPassword);
-			$data['status'] = 1;
+				M('Systemlog') -> data($log) -> add();
+			}else{
+				$data['status'] = 0;
+				$data['info'] = "原密码错误";
+			}
 			$this->ajaxReturn($data);
 		}
 	}

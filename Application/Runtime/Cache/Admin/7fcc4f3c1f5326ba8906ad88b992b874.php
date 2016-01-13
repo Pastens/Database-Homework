@@ -8,6 +8,8 @@
     <script type="text/javascript" src="/Public/Static/jquery.min.js"></script>
     <script type="text/javascript" src="/Public/Static/jquery.tablesort.js"></script>
     <script type="text/javascript" src="/Public/Static/semantic/semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="/Public/Static/jquery.md5.min.js"></script>
+
     <style>
     body {
         background-color: #FFFFFF;
@@ -194,12 +196,14 @@
                         <div class="ui form">
                             <div class="field">
                                 <label>原密码</label>
-                                <input rows="1" type="text" name="userName" id="userName" placeholder="请输入原密码">
+                                <input rows="1" type="password" id="oldPassword" placeholder="请输入原密码">
                             </div>
                             <div class="field">
-                                <label>原用户名</label>
-                                <input rows="1" type="text" name="userName" id="userName" placeholder="请输入新的密码">
+                                <label>新密码</label>
+                                <input rows="1" type="password" id="newPassword" placeholder="请输入新的密码">
                             </div>
+                            <div class="ui error message"></div>
+                            <div class="ui success message"></div>
                         </div>
                         <div class="row">
                             <div class="ui animated fade red button">
@@ -225,9 +229,65 @@
         </div>
     </div>
     <script>
-    //initialize
     jQuery(document).ready(function($) {
-        $('table').tablesort();
+        $('.ui.form').on('click',  function(event) {
+            $(this).removeClass('error');
+            $(this).removeClass('success');
+        });
+
+        $('.ui.animated.fade.red.button').on('click', function(event) {
+            var oldPassword = $("#oldPassword").val();
+            var newPassword = $("#newPassword").val();
+
+            if(oldPassword == null || oldPassword == ""){
+                var message = "<p>"+"请输入原密码"+"</p>";
+                $('.ui.error.message').html(message);
+                $('.ui.form').addClass('error');
+            }else if(newPassword == null || newPassword == ""){
+                var message = "<p>"+"请输入原密码"+"</p>";
+                $('.ui.error.message').html(message);
+                $('.ui.form').addClass('error');
+            }else if(oldPassword == newPassword){
+                var message = "<p>"+"更改的密码与原密码相同"+"</p>";
+                $('.ui.error.message').html(message);
+                $('.ui.form').addClass('error');
+            }else{
+                $.ajax({
+                    url: '<?php echo U("Admin/User/resetPassword");?>',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        oldPassword: $.md5(oldPassword),
+                        newPassword:$.md5(newPassword)
+                    },
+                    success: function(data){
+                        if(data.status == 1){
+                            var message = "<p>"+"修改成功,3秒后重新登录"+"</p>";
+                            $('.ui.success.message').html(message);
+                            $('.ui.form').addClass('success');
+                            var t = setTimeout(function(){
+                                location.href = "<?php echo U('Admin/Login/logout');?>";
+                            },3000);
+                        }else if(data.status == 0){
+                            var message = "<p>"+data.info+"</p>";
+                            $('.ui.error.message').html(message);
+                            $('.ui.form').addClass('error');
+                        }
+                    }
+                })
+                .done(function() {
+                    console.log("success");
+                })
+                .fail(function() {
+                    console.log("error");
+                })
+                .always(function() {
+                    console.log("complete");
+                });
+                
+            }
+
+        });
     });
     </script>
 </body>
