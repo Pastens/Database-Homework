@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-01-12 16:04:53
+-- Generation Time: 2016-01-13 09:08:43
 -- 服务器版本： 5.6.27
 -- PHP Version: 5.6.15
 
@@ -41,12 +41,12 @@ CREATE TABLE `es_admin` (
 --
 
 INSERT INTO `es_admin` (`adminId`, `adminName`, `adminNickname`, `adminPassword`, `adminCount`, `enable`, `superior`) VALUES
-(1, 'developer', '系统开发人员', 'e10adc3949ba59abbe56e057f20f883e', 47, 1, 0),
-(2, 'sysadmin', '系统管理员', 'e10adc3949ba59abbe56e057f20f883e', 32, 1, 1),
-(3, 'shopadmin', '商店管理员', 'e10adc3949ba59abbe56e057f20f883e', 27, 1, 2),
-(4, 'orderadmin', '订单管理员', 'e10adc3949ba59abbe56e057f20f883e', 5, 1, 3),
-(5, 'useradmin', '用户管理员', 'e10adc3949ba59abbe56e057f20f883e', 5, 1, 4),
-(6, 'shopowner', '加盟客户', 'e10adc3949ba59abbe56e057f20f883e', 5, 1, 5);
+(1, 'developer', '系统开发人员', 'e10adc3949ba59abbe56e057f20f883e', 51, 1, 0),
+(2, 'sysadmin', '系统管理员', 'e10adc3949ba59abbe56e057f20f883e', 36, 1, 1),
+(3, 'shopadmin', '商店管理员', 'e10adc3949ba59abbe56e057f20f883e', 31, 1, 2),
+(4, 'orderadmin', '订单管理员', 'e10adc3949ba59abbe56e057f20f883e', 9, 1, 3),
+(5, 'useradmin', '用户管理员', 'e10adc3949ba59abbe56e057f20f883e', 9, 1, 4),
+(6, 'shopowner', '加盟客户', 'e10adc3949ba59abbe56e057f20f883e', 9, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -129,9 +129,9 @@ CREATE TABLE `es_products` (
 --
 
 INSERT INTO `es_products` (`productId`, `productName`, `productPrice`, `productIntro`, `productAmount`, `coverUrl`, `productCount`, `shopId`, `priority`, `enable`) VALUES
-(1, '电脑', 5000, '电脑 5000元上船带回家', 200, '0', 1, 1, 1, 1),
-(2, '机械键盘', 699, 'Cherry G80-3000', 500, '0', 1, 1, 1, 1),
-(3, '移动硬盘', 499, '2TB', 0, '0', 1, 2, 1, 0);
+(1, '电脑', 5000, '电脑 5000元上船带回家', 200, '1.jpg', 1, 1, 1, 1),
+(2, '机械键盘', 699, 'Cherry G80-3000', 500, '2.jpg', 1, 1, 1, 1),
+(3, '移动硬盘', 499, '2TB', 0, '3.jpg', 1, 2, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -173,9 +173,10 @@ CREATE TABLE `es_systemlog` (
 --
 
 INSERT INTO `es_systemlog` (`logId`, `operationName`, `operationUserId`, `operationUserType`, `timestamp`) VALUES
-(1, '登录', 1, 0, 0),
-(2, '登录', 6, 0, 1452612862),
-(3, '登录', 1, 0, 1452612874);
+(1, '管理员登录', 1, 0, 1452670669),
+(2, '用户注册', 4, 1, 1452670691),
+(3, '用户登录', 4, 1, 1452670691),
+(4, '登录', 3, 1, 1452670853);
 
 -- --------------------------------------------------------
 
@@ -191,6 +192,14 @@ CREATE TABLE `es_userinfo` (
   `address` varchar(255) NOT NULL,
   `gender` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `es_userinfo`
+--
+
+INSERT INTO `es_userinfo` (`Id`, `userId`, `nickname`, `name`, `address`, `gender`) VALUES
+(1, 1, '测试用户', '王尼玛', '浙江省杭州市西湖区 人民法院', 1),
+(2, 2, '被封禁测试用户', '王小明', '浙江省杭州市膜蛤区', 0);
 
 -- --------------------------------------------------------
 
@@ -211,7 +220,9 @@ CREATE TABLE `es_users` (
 
 INSERT INTO `es_users` (`userId`, `userName`, `userPassword`, `enable`) VALUES
 (1, 'user', 'e10adc3949ba59abbe56e057f20f883e', 1),
-(2, 'user_disabled', 'e10adc3949ba59abbe56e057f20f883e', 0);
+(2, 'user_disabled', 'e10adc3949ba59abbe56e057f20f883e', 0),
+(3, 'test', 'e10adc3949ba59abbe56e057f20f883e', 1),
+(4, 'test_user', 'e10adc3949ba59abbe56e057f20f883e', 1);
 
 --
 -- Indexes for dumped tables
@@ -310,17 +321,17 @@ ALTER TABLE `es_shop`
 -- 使用表AUTO_INCREMENT `es_systemlog`
 --
 ALTER TABLE `es_systemlog`
-  MODIFY `logId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `logId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- 使用表AUTO_INCREMENT `es_userinfo`
 --
 ALTER TABLE `es_userinfo`
-  MODIFY `Id` int(32) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用表AUTO_INCREMENT `es_users`
 --
 ALTER TABLE `es_users`
-  MODIFY `userId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userId` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- 限制导出的表
 --
