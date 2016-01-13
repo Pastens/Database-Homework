@@ -101,10 +101,10 @@
         opacity: 1;
     }
     
-    .ui.four.wide.column .ui.inverted.segment{
-        padding: 20px 40px;
+    .ui.three.wide.column .ui.inverted.segment {
+        padding: 20px 30px;
     }
-
+    
     @media only screen and (max-width: 700px) {
         .ui.fixed.menu {
             display: none !important;
@@ -205,27 +205,25 @@
         </div>
         <div class="ui vertical stripe segment">
             <div class="ui grid container">
-                <div class="ui twelve wide column items">
-                    <volist name="item" id="item">
-                        <div class="item">
-                            <a class="ui small image">
-                                <img src="__PUBLIC__/Upload/{$item.itemCover}">
-                            </a>
-                            <div class="content">
-                                <a class="header">{$item.itemName}</a>
-                                <div class="description">
-                                    <p>{$item.itemIntro}</p>
+                <div class="ui thirteen wide column items">
+                    <div class="ui link cards">
+                        <volist name="item" id="item">
+                            <div class="card">
+                                <div class="content">
+                                    <div class="header">{$item.shopName}</div>
+                                    <div class="meta">
+                                        <a>{$item.shopOwner}</a>
+                                    </div>
                                 </div>
-                                <div class="extra">
-                                    <i class="green unhide icon"></i>浏览量: {$item.itemCount}&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <i class="red dollar icon"></i>销售量: {$item.itemSales}&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <i class="yellow yen icon"></i>价格: {$item.itemPrice}&nbsp;&nbsp;&nbsp;&nbsp;
+                                <div class="extra content">
+                                    <span class="right floated">拥有 {$item.shopProducts} 件商品</span>
+                                    <span>销售额 <i class="yen icon"></i>{$item.shopProfits}</span>
                                 </div>
                             </div>
-                        </div>
-                    </volist>
+                        </volist>
+                    </div>
                 </div>
-                <div class="ui four wide column">
+                <div class="ui three wide column">
                     <div class="ui inverted segment">
                         <div class="ui horizontal small statistics">
                             <div class="ui red inverted statistic">
