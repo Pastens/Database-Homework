@@ -430,10 +430,28 @@ class DashboardController extends Controller {
 	}
 
 	public function adminInfo(){
-		$this->display();
+		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
+		if($condition){
+			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
+			$data['adminSuperior'] = $rawData[superior];
+			$data['adminName'] = $rawData[adminnickname];
+			$this->assign('data',$data);
+			$this->display();
+        }else{
+        	$this->redirect('/Admin/Login');
+        }
 	}
 
 	public function resetPassword(){
-		$this->display();
+		$condition = (((cookie('cid') && session('cid')) != null) && ((cookie('token') && session('token'))!=null));
+		if($condition){
+			$rawData = M('Admin') -> where("adminId='%d'",cookie('cid'))->find();
+			$data['adminSuperior'] = $rawData[superior];
+			$data['adminName'] = $rawData[adminnickname];
+			$this->assign('data',$data);
+			$this->display();
+        }else{
+        	$this->redirect('/Admin/Login');
+        }
 	}
 }

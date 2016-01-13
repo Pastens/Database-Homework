@@ -3,13 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>更改密码 —— Eshop</title>
+    <title>更改资料 —— Eshop</title>
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Static/semantic/semantic/dist/semantic.min.css">
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.min.js"></script>
     <script type="text/javascript" src="__PUBLIC__/Static/jquery.tablesort.js"></script>
     <script type="text/javascript" src="__PUBLIC__/Static/semantic/semantic/dist/semantic.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Static/jquery.md5.min.js"></script>
-
     <style>
     body {
         background-color: #FFFFFF;
@@ -200,19 +198,19 @@
                     <div class="ui breadcrumb">
                         <a class="section" href="{:U('Admin/dashboard/index')}">管理面板</a>
                         <i class="right arrow icon divider"></i>
-                        <div class="active section">更改密码</div>
+                        <div class="active section">更改资料</div>
                     </div>
                 </div>
                 <div class="ui segment">
                     <div class="ui center aligned grid">
                         <div class="ui form">
                             <div class="field">
-                                <label>原密码</label>
-                                <input rows="1" type="text" id="oldPassword" placeholder="请输入原密码">
+                                <label>原用户名</label>
+                                <input rows="1" type="text" name="userName" id="mark" value="{$data.adminName}" disabled>
                             </div>
                             <div class="field">
                                 <label>新用户名</label>
-                                <input rows="1" type="text" id="newPassword" placeholder="请输入新的用户名">
+                                <input rows="1" type="text" id="userName" placeholder="请输入新的用户名">
                             </div>
                             <div class="ui error message"></div>
                             <div class="ui success message"></div>
@@ -220,7 +218,7 @@
                         <div class="row">
                             <div class="ui animated fade red button">
                                 <div class="visible content">
-                                    <i class="warning icon"></i> 修改密码
+                                    <i class="warning icon"></i> 修改用户名
                                 </div>
                                 <div class="hidden content">
                                     <i class="checkmark box icon"></i> 确认修改
@@ -248,8 +246,7 @@
         });
 
         $('.ui.animated.fade.red.button').on('click', function(event) {
-            var oldPassword = $("#oldPassword").val();
-            var newPassword = $("#newPassword").val();
+            var userName = $("#userName").val();
 
             if(userName == null || userName == ""){
                 var message = "<p>"+"请输入要更改的用户名"+"</p>";

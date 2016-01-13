@@ -102,4 +102,36 @@ class UserController extends Controller {
 			$this->ajaxReturn($data);
 		}
 	}
+
+	public function resetAdminname() {
+		if(!IS_POST){
+			$this->error('非法操作');
+		}else{
+			$adminName = I('post.adminName');
+			$adminId = cookie('cid');
+
+			$adminCheck = M('Admin')->where("adminNickname='%s'",$adminName)->find();
+			if($adminCheck){
+				$data['status'] = 0;
+				$data['info'] = "用户名已存在";
+			}else{
+				M('Admin') -> where("adminId='%d'",$adminId) -> setField('adminNickname',$adminName);
+				$data['status'] = 1;
+			}
+			$this->ajaxReturn($data);
+		}
+	}
+
+	public function resetPassword() {
+		if(!IS_POST){
+			$this->error('非法操作');
+		}else{
+			$adminPassword = I('post.adminPassword');
+			$adminId = cookie('cid');
+
+			M('Admin') -> where("adminId='%d'",$adminId) -> setField('adminPassword',$adminPassword);
+			$data['status'] = 1;
+			$this->ajaxReturn($data);
+		}
+	}
 }
